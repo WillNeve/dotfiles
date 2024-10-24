@@ -24,7 +24,5 @@ export BUNDLER_EDITOR=code
 export PATH="${PATH}:./bin:./node_modules/.bin:/usr/local/sbin:${HOME}/.rbenv/bin"
 
 # [Startup Services]
-# Start postgresql local server
-sudo /etc/init.d/postgresql start
 # Initialise Ruby Env
 type -a rbenv > /dev/null && eval "$(rbenv init -)"
