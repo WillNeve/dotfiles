@@ -29,5 +29,6 @@ type -a rbenv > /dev/null && eval "$(rbenv init -)"
 # Start postgresql local server
 sudo /etc/init.d/postgresql start
 # Start NVM
-export NVM_DIR="/home/williamneve/.nvm"
-[ -s "/nvm.sh" ] && \. "/nvm.sh"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
