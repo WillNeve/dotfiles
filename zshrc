@@ -21,8 +21,13 @@ export EDITOR=code
 export BUNDLER_EDITOR=code
 
 # [PATH Additions]
-export PATH="${PATH}:./bin:./node_modules/.bin:/usr/local/sbin:${HOME}/.rbenv/bin"
+export PATH="${PATH}:./bin:./node_modules/.bin:/usr/local/bin:${HOME}/.rbenv/bin"
 
 # [Startup Services]
 # Initialise Ruby Env
 type -a rbenv > /dev/null && eval "$(rbenv init -)"
+# Start postgresql local server
+sudo /etc/init.d/postgresql start
+# Start NVM
+export NVM_DIR="/home/williamneve/.nvm"
+[ -s "/nvm.sh" ] && \. "/nvm.sh"
