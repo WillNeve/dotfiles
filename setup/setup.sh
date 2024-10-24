@@ -1,8 +1,8 @@
 #!/bin/zsh
-# - - - - - - Config + Function Declarations - - - - - -
+
+# [Config]
 USERNAME=$(whoami)
 EMAIL="williamneve6000@gmail.com"
-# assumes this script is in the same directory as dotfiles
 DOTFILES_DIR="$HOME/dotfiles"
 CODE_SETTINGS_DIR=~/.vscode-server/data/Machine
 SSH_DIR=~/.ssh
@@ -18,26 +18,25 @@ backupFile() {
 symlink() {
   file=$1
   link=$2
-  # only create link if it doesnt already exist
   if [ ! -e "$link" ]; then
     ln -s $file $link
   fi
 }
-# - - - - - - /Config + Function Declarations - - - - - -
 
-# - - - - - Setup Script - - - - - -
+# [Up to date check]
+
 echo -n "🔒 Running pre-setup checks ..."
 sleep 0.5
-
-# git fetch
-# STATUS=$(git status --porcelain)
-# if [ -n "$STATUS" ]; then
-#   echo "⚠️ Aborting setup: Dotfiles repo is out of date with origin or there are uncommitted changes."
-#   exit 1
-# fi
+git fetch
+STATUS=$(git status --porcelain)
+if [ -n "$STATUS" ]; then
+  echo "⚠️ Aborting setup: Dotfiles repo is out of date with origin or there are uncommitted changes."
+  exit 1
+fi
 echo -e "\r🔓 Pre-setup checks  passed, proceeding with setup script..."
 
-## Install Oh-My-ZSH Plugins
+# [Oh-My-ZSH Plugins]
+
 mkdir -p "$ZSH_PLUGINS_DIR" && cd "$ZSH_PLUGINS_DIR"
 if [ ! -d "$ZSH_PLUGINS_DIR/zsh-syntax-highlighting" ]; then
   git clone https://github.com/zsh-users/zsh-autosuggestions
@@ -47,7 +46,9 @@ cd "$DOTFILES_DIR"
 echo "✅ Installed ZSH Plugins"
 sleep 0.5
 
-## Create Various sym-links in Root Path
+# [Symbolic Link Creation]
+
+# Create Various sym-links in Root Path
 HOME_SYMLINKS=("aliases" "gitconfig" "irbrc" "zshrc")
 for name in "${HOME_SYMLINKS[@]}"; do
   if [ ! -d "$name" ]; then
@@ -59,7 +60,7 @@ done
 echo "✅ Created Sym-Links in in $HOME for: ${HOME_SYMLINKS[*]}"
 sleep 0.5
 
-## Create VSCode settings and keybindings sym-links in Code Path
+# Create VSCode settings and keybindings sym-links in Code Path
 CODE_SYMLINKS=("settings.json" "keybindings.json")
 for name in "${CODE_SYMLINKS[@]}"; do
   target="$CODE_SETTINGS_DIR/$name"
@@ -69,12 +70,12 @@ done
 echo "✅ Created Sym-Links in $CODE_SETTINGS_DIR for: ${CODE_SYMLINKS[*]}"
 sleep 0.5
 
-## Create SSH config sym-link in SSH path
+# Create SSH config sym-link in SSH path
 target=$SSH_DIR/config
 backupFile $target
 symlink $DOTFILES_DIR/config $target
 echo "✅ Created Sym-Link in $SSH_DIR for: config"
 sleep 0.5
 
-# exec zsh
-# - - - - - /Setup Script - - - - - -
+# Reload shell
+exec zsh
