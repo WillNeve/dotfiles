@@ -1,6 +1,6 @@
-# WSL2/Ubuntu Dotfiles Setup
+# ⏺️ WSL2/Ubuntu Dotfiles Setup
 
-## 1. **Clone the repo**
+## 1. **Clone the repo into home directory**
 
 ```bash
 git clone git@github.com:willneve/dotfiles.git ~/dotfiles
