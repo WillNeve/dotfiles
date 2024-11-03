@@ -1,4 +1,6 @@
 {
+  "extensions.autoUpdate": false,
+  "update.mode": "manual",
   // [Editor Settings]
   "editor.bracketPairColorization.enabled": true,
   "editor.detectIndentation": false,
