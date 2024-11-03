@@ -44,6 +44,8 @@
   "workbench.settings.useSplitJSON": true,
   "workbench.startupEditor": "newUntitledFile",
   "workbench.panel.defaultLocation": "right",
+  "workbench.colorTheme": "One Dark Pro Darker",
+  "workbench.sideBar.location": "right",
   // [Language/Extension Specific Settings]
   "emmet.includeLanguages": {
     "erb": "html"
