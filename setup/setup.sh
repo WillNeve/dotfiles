@@ -49,7 +49,7 @@ sleep 0.5
 # [Symbolic Link Creation]
 
 # Create Various sym-links in Root Path
-HOME_SYMLINKS=("aliases" "gitconfig" "irbrc" "zshrc")
+HOME_SYMLINKS=("aliases" "gitconfig" "irbrc" "zshrc" "tmux.conf")
 for name in "${HOME_SYMLINKS[@]}"; do
   if [ ! -d "$name" ]; then
     target="$HOME/.$name"
