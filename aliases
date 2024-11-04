@@ -3,4 +3,7 @@ alias dotfiles="cd $HOME/dotfiles"
 alias setup="cd $HOME/setup"
 
 # Quickly serve the current directory as HTTP
-alias serve='ruby -run -e httpd . -p 8000'
+alias serve="ruby -run -e httpd . -p 8000"
+
+# Project Specific
+alias localista="/home/willneve/localista/create-localista-tmux-session.sh"
