@@ -6,4 +6,4 @@ alias setup="cd $HOME/setup"
 alias serve="ruby -run -e httpd . -p 8000"
 
 # Project Specific
-alias localista="/home/willneve/localista/localista-tmux.sh"
+alias localista="/home/willneve/scripts/localista-tmux.sh"
