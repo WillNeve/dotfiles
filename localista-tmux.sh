@@ -21,9 +21,8 @@ sleep 0.3 # cd and clear time
 tmux send-keys -t $SESSION_NAME:0.0 "npm run emailengine" C-m
 tmux send-keys -t $SESSION_NAME:0.1 "npm run dev" C-m
 tmux send-keys -t $SESSION_NAME:0.2 "prisma studio" C-m
-tmux send-keys -t $SESSION_NAME:1 "git fetch && git status" C-m
+tmux send-keys -t $SESSION_NAME:1 "code . && git fetch && clear && git status" C-m
 sleep 0.2
-
 tmux select-window -t $SESSION_NAME:1
 tmux select-pane -t 0
 
