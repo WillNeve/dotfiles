@@ -41,7 +41,10 @@
   ],
   "profiles": {
     "defaults": {
-      "colorScheme": "One Half Dark"
+      "colorScheme": "One Half Dark",
+      "font": {
+        "face": "JetBrainsMono Nerd Font"
+      }
     },
     "list": [
       {
@@ -62,7 +65,7 @@
         "commandline": "wsl.exe ~",
         "experimental.retroTerminalEffect": false,
         "font": {
-          "face": "JetBrains Mono",
+          "face": "JetBrainsMono Nerd Font",
           "size": 12,
           "weight": "normal"
         },
