@@ -1,8 +1,14 @@
 # [Navigation]
+# lsd instead of ls if available
+if command -v lsd &> /dev/null; then
+    alias ls='lsd'
+fi
+## [Named Places]
 alias dotfiles="cd $HOME/dotfiles"
 alias setup="cd $HOME/setup"
 
-# Quickly serve the current directory as HTTP
+# [Util]
+## Quickly serve the current directory as HTTP
 alias serve="ruby -run -e httpd . -p 8000"
 
 # Project Specific

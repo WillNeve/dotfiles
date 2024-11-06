@@ -4,7 +4,6 @@
   // [Editor Settings]
   "editor.bracketPairColorization.enabled": true,
   "editor.detectIndentation": false,
-  "editor.fontSize": 14,
   "editor.guides.bracketPairs": true,
   "editor.minimap.enabled": false,
   "editor.multiCursorModifier": "ctrlCmd",
@@ -46,10 +45,11 @@
   "workbench.settings.useSplitJSON": true,
   "workbench.startupEditor": "newUntitledFile",
   "workbench.panel.defaultLocation": "right",
-  "workbench.colorTheme": "One Dark Pro Darker",
+  "workbench.colorTheme": "Catppuccin Macchiato",
   "workbench.sideBar.location": "right",
   // [Language/Extension Specific Settings]
   "emmet.includeLanguages": {
     "erb": "html"
-  }
+  },
+  "editor.fontFamily": "JetBrainsMono NF, Consolas, 'Courier New', monospace"
 }
