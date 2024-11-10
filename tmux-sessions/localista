@@ -9,7 +9,7 @@ create_session() {
     tmux new-session -d -s $SESSION_NAME
 
     tmux rename-window -t $SESSION_NAME:0 'server'
-    tmux split-window -h -t $SESSION_NAME:0
+    tmux split-window -h -t $SESSION_NAME:0 -p "80"
     tmux split-window -v -t $SESSION_NAME:0.1
 
     tmux new-window -t $SESSION_NAME:1 -n 'main'
