@@ -5,17 +5,17 @@ ZSH_DISABLE_COMPFIX=true
 
 plugins=(git gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search ssh-agent)
 source "${OMZSH_DIR}/oh-my-zsh.sh"
+# Remove aliases that some of the above plugins bring
+unalias rm
+unalias lt
 
+# [P10K Prompt]
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-
 # [Aliases]
-# Remove aliases that some plugins bring
-unalias rm
-unalias lt
-# Execute aliases script to import custom aliases
+# Source aliases definition script
 [[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
 
 # [ENV Exports]
@@ -25,8 +25,18 @@ export BROWSER='/mnt/c/Program Files(x86)/Google/Chrome/Application/chrome.exe' 
 export EDITOR=code
 export BUNDLER_EDITOR=code
 
-# [PATH Additions]
-export PATH="${PATH}:./bin:./node_modules/.bin:/usr/local/bin:${HOME}/.rbenv/bin"
+# [PATH Entries]
+path_entries=(
+    /usr/local/bin # user bin
+    ./bin # local directory bin
+    ./node_modules/.bin # local directory node_modules bin
+    $HOME/.tmux-sessions
+    $HOME/.rbenv/bin
+    $HOME/.tmuxifier/bin
+)
+typeset -U PATH path
+export PATH="${(j.:.)path_entries}:$PATH"
+export TMUXIFIER_LAYOUT_PATH="$HOME/.tmux-layouts"
 
 # [Startup Services] # ? These may not work initially until you have completed setup!
 # Initialise Ruby Env
@@ -36,6 +46,7 @@ sudo /etc/init.d/postgresql start
 # Start NVM
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# Load Tmuxifier
+eval "$(tmuxifier init -)"

@@ -77,5 +77,7 @@ symlink $DOTFILES_DIR/config $target
 echo "✅ Created Sym-Link in $SSH_DIR for: config"
 sleep 0.5
 
+mkdir "$HOME/.tmux-sessions"
+
 # Reload shell
 exec zsh
