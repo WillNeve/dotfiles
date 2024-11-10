@@ -32,11 +32,9 @@ path_entries=(
     ./node_modules/.bin # local directory node_modules bin
     $HOME/.tmux-sessions
     $HOME/.rbenv/bin
-    $HOME/.tmuxifier/bin
 )
 typeset -U PATH path
 export PATH="${(j.:.)path_entries}:$PATH"
-export TMUXIFIER_LAYOUT_PATH="$HOME/.tmux-layouts"
 
 # [Startup Services] # ? These may not work initially until you have completed setup!
 # Initialise Ruby Env
@@ -48,5 +46,3 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-# Load Tmuxifier
-eval "$(tmuxifier init -)"
