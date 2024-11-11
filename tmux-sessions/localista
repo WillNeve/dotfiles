@@ -1,7 +1,5 @@
 #!/bin/bash
 
-tmux start-server 2>/dev/null
-
 SESSION_NAME="localista"
 PROJECT_PATH="$HOME/localista/localista-app"
 
