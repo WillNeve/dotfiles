@@ -4,6 +4,13 @@
   "actions": [
     {
       "command": {
+        "action": "toggleFocusMode"
+      },
+      "id": "Terminal.ToggleFocusMode",
+      "keys": "ctrl+f"
+    },
+    {
+      "command": {
         "action": "copy",
         "singleLine": false
       },
@@ -28,8 +35,78 @@
       },
       "id": "User.splitPane.A6751878",
       "keys": "alt+shift+d"
+    },
+    {
+      // Set opacity...
+      "name": { "key": "SetOpacityParentCommandName" },
+      "commands": [
+        {
+          "command": {
+            "action": "adjustOpacity",
+            "opacity": 0,
+            "relative": false
+          }
+        },
+        {
+          "command": {
+            "action": "adjustOpacity",
+            "opacity": 25,
+            "relative": false
+          }
+        },
+        {
+          "command": {
+            "action": "adjustOpacity",
+            "opacity": 50,
+            "relative": false
+          }
+        },
+        {
+          "command": {
+            "action": "adjustOpacity",
+            "opacity": 75,
+            "relative": false
+          }
+        },
+        {
+          "command": {
+            "action": "adjustOpacity",
+            "opacity": 80,
+            "relative": false
+          }
+        },
+        {
+          "command": {
+            "action": "adjustOpacity",
+            "opacity": 85,
+            "relative": false
+          }
+        },
+        {
+          "command": {
+            "action": "adjustOpacity",
+            "opacity": 90,
+            "relative": false
+          }
+        },
+        {
+          "command": {
+            "action": "adjustOpacity",
+            "opacity": 95,
+            "relative": false
+          }
+        },
+        {
+          "command": {
+            "action": "adjustOpacity",
+            "opacity": 100,
+            "relative": false
+          }
+        }
+      ]
     }
   ],
+  "alwaysShowTabs": true,
   "copyFormatting": "none",
   "copyOnSelect": false,
   "defaultProfile": "{2c4de342-38b7-51cf-b940-2309a097f518}",
@@ -72,10 +149,10 @@
         "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
         "hidden": false,
         "name": "Ubuntu",
-        "opacity": 100,
+        "opacity": 90,
         "padding": "10",
         "source": "Windows.Terminal.Wsl",
-        "useAcrylic": false
+        "useAcrylic": true
       }
     ]
   },
@@ -105,6 +182,7 @@
     }
   ],
   "showTabsInTitlebar": true,
+  "theme": "system",
   "themes": [],
   "useAcrylicInTabRow": true
 }
