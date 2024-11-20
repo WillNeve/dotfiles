@@ -60,6 +60,10 @@ done
 echo "✅ Created Sym-Links in in $HOME for: ${HOME_SYMLINKS[*]}"
 sleep 0.5
 
+backupFile "$HOME/.config/htop/htoprc"
+symlink "$DOTFILES_DIR/htoprc" "$HOME/.config/htop/htoprc"
+echo "✅ Created Sym-Link in in $HOME/.config for: htop"
+
 # Create VSCode settings and keybindings sym-links in Code Path
 CODE_SYMLINKS=("settings.json" "keybindings.json")
 for name in "${CODE_SYMLINKS[@]}"; do
