@@ -3,9 +3,7 @@
   "$schema": "https://aka.ms/terminal-profiles-schema",
   "actions": [
     {
-      "command": {
-        "action": "toggleFocusMode"
-      },
+      "command": "toggleFocusMode",
       "id": "Terminal.ToggleFocusMode",
       "keys": "ctrl+f"
     },
@@ -37,8 +35,6 @@
       "keys": "alt+shift+d"
     },
     {
-      // Set opacity...
-      "name": { "key": "SetOpacityParentCommandName" },
       "commands": [
         {
           "command": {
@@ -103,7 +99,11 @@
             "relative": false
           }
         }
-      ]
+      ],
+      // Set opacity...
+      "name": {
+        "key": "SetOpacityParentCommandName"
+      }
     }
   ],
   "alwaysShowTabs": true,
@@ -138,7 +138,7 @@
       },
       {
         "adjustIndistinguishableColors": "never",
-        "colorScheme": "One Dark Pro Darker",
+        "colorScheme": "Catppuccin Macchiato",
         "commandline": "wsl.exe ~",
         "experimental.retroTerminalEffect": false,
         "font": {
@@ -157,6 +157,29 @@
     ]
   },
   "schemes": [
+    {
+      "background": "#24273A",
+      "black": "#494D64",
+      "blue": "#8AADF4",
+      "brightBlack": "#5B6078",
+      "brightBlue": "#8AADF4",
+      "brightCyan": "#8BD5CA",
+      "brightGreen": "#A6DA95",
+      "brightPurple": "#F5BDE6",
+      "brightRed": "#ED8796",
+      "brightWhite": "#A5ADCB",
+      "brightYellow": "#EED49F",
+      "cursorColor": "#F4DBD6",
+      "cyan": "#8BD5CA",
+      "foreground": "#CAD3F5",
+      "green": "#A6DA95",
+      "name": "Catppuccin Macchiato",
+      "purple": "#F5BDE6",
+      "red": "#ED8796",
+      "selectionBackground": "#5B6078",
+      "white": "#B8C0E0",
+      "yellow": "#EED49F"
+    },
     {
       "background": "#23272E",
       "black": "#0C0C0C",
@@ -182,7 +205,28 @@
     }
   ],
   "showTabsInTitlebar": true,
-  "theme": "system",
-  "themes": [],
+  "theme": "Catppuccin Macchiato",
+  "themes": [
+    {
+      "name": "Catppuccin Macchiato",
+      "tab": {
+        "background": "#24273AFF",
+        "iconStyle": "default",
+        "showCloseButton": "always",
+        "unfocusedBackground": null
+      },
+      "tabRow": {
+        "background": "#1E2030FF",
+        "unfocusedBackground": "#181926FF"
+      },
+      "window": {
+        "applicationTheme": "dark",
+        "experimental.rainbowFrame": false,
+        "frame": null,
+        "unfocusedFrame": null,
+        "useMica": false
+      }
+    }
+  ],
   "useAcrylicInTabRow": true
 }
