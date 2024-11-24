@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SESSION_NAME="localista"
-PROJECT_PATH="$HOME/localista/localista-app"
+PROJECT_PATH="$HOME/work/localista/localista-app"
 
 create_session() {
     tmux new-session -d -s $SESSION_NAME -n 'server'
@@ -19,6 +19,8 @@ create_session() {
     for pane in 1 2 3; do
         tmux send-keys -t $SESSION_NAME:1.$pane "cd $PROJECT_PATH && clear" Enter
     done
+    tmux send-keys -t $SESSION_NAME:2 "cd $PROJECT_PATH && clear" Enter
+    tmux send-keys -t $SESSION_NAME:3 "cd $PROJECT_PATH && clear" Enter
 
     tmux send-keys -t $SESSION_NAME:1.1 "npm run emailengine" C-m
     tmux send-keys -t $SESSION_NAME:1.2 "npm run dev" C-m
