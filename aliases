@@ -6,6 +6,8 @@ fi
 ## [Named Places]
 alias dotfiles="cd $HOME/dotfiles"
 alias setup="cd $HOME/setup"
+alias load-dconf="sh $HOME/dotfiles/load-dconf-settings.sh"
+alias backup-dconf="sh $HOME/dotfiles/backup-dconf-settings.sh"
 
 # [Util]
 ## Quickly serve the current directory as HTTP
