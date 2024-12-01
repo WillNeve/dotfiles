@@ -63,8 +63,8 @@ sources=[('xkb', 'gb')]
 [org/gnome/desktop/interface]
 color-scheme='prefer-dark'
 cursor-theme='c-macchiato-mauve-cursors'
-gtk-theme='Yaru-magenta-dark'
-icon-theme='Yaru-magenta'
+gtk-theme='catppuccin-macchiato-mauve-standard+default'
+icon-theme='Tela-circle'
 show-battery-percentage=true
 toolkit-accessibility=false
 
@@ -126,8 +126,8 @@ sleep-inactive-ac-timeout=900
 sleep-inactive-ac-type='suspend'
 
 [org/gnome/shell]
-enabled-extensions=['user-theme@gnome-shell-extensions.gcampax.github.com', 'ding@rastersoft.com', 'ubuntu-dock@ubuntu.com', 'tiling-assistant@ubuntu.com', 'lockscreen-extension@pratap.fastmail.fm', 'dash-to-dock@micxgx.gmail.com', 'ControlBlurEffectOnLockScreen@pratap.fastmail.fm', 'mprisLabel@moon-0xff.github.com']
-favorite-apps=['org.gnome.Nautilus.desktop', 'obsidian.desktop', 'google-chrome.desktop', 'org.gnome.Terminal.desktop', 'code.desktop', 'spotify.desktop', 'org.gnome.clocks.desktop']
+enabled-extensions=['user-theme@gnome-shell-extensions.gcampax.github.com', 'ding@rastersoft.com', 'ubuntu-dock@ubuntu.com', 'tiling-assistant@ubuntu.com', 'lockscreen-extension@pratap.fastmail.fm', 'dash-to-dock@micxgx.gmail.com', 'ControlBlurEffectOnLockScreen@pratap.fastmail.fm', 'mprisLabel@moon-0xff.github.com', 'panel-date-format@keiii.github.com']
+favorite-apps=['org.gnome.Nautilus.desktop', 'obsidian.desktop', 'google-chrome.desktop', 'org.gnome.Terminal.desktop', 'code.desktop', 'spotify.desktop']
 last-selected-power-profile='power-saver'
 welcome-dialog-last-shown-version='46.0'
 
@@ -159,6 +159,9 @@ left-click-action='play-pause'
 max-string-length=25
 second-field='xesam:artist'
 symbolic-source-icon=false
+
+[org/gnome/shell/extensions/panel-date-format]
+format='%a %d %b %Y %H:%M\n'
 
 [org/gnome/shell/extensions/tiling-assistant]
 active-window-hint-color='rgb(198,160,246)'
