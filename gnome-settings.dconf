@@ -69,10 +69,16 @@ show-battery-percentage=true
 toolkit-accessibility=false
 
 [org/gnome/desktop/notifications]
-application-children=['apport-gtk', 'spotify']
+application-children=['apport-gtk', 'spotify', 'gnome-power-panel', 'org-gnome-clocks']
 
 [org/gnome/desktop/notifications/application/apport-gtk]
 application-id='apport-gtk.desktop'
+
+[org/gnome/desktop/notifications/application/gnome-power-panel]
+application-id='gnome-power-panel.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-clocks]
+application-id='org.gnome.clocks.desktop'
 
 [org/gnome/desktop/notifications/application/spotify]
 application-id='spotify.desktop'
