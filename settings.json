@@ -38,6 +38,7 @@
     "**/vendor/**": true
   },
   // [Window/Workbench (App) Settings]
+  "window.titleBarStyle": "custom",
   "workbench.editor.enablePreview": true,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.settings.editor": "json",
