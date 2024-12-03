@@ -37,6 +37,7 @@ typeset -U PATH path
 export PATH="${(j.:.)path_entries}:$PATH"
 
 # [Startup Services] # ? These may not work initially until you have completed setup!
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # Initialise Ruby Env
 type -a rbenv > /dev/null && eval "$(rbenv init -)"
 # Start postgresql local server
@@ -46,7 +47,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
 # TEMP
 export FLYCTL_INSTALL="/home/willneve/.fly"
-export PATH="$FLYCTL_INSTALL/bin:$PATH"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"

@@ -1,0 +1,275 @@
+[apps/update-manager]
+first-run=false
+launch-count=1
+launch-time=int64 1733013003
+
+[com/mattjakeman/ExtensionManager]
+last-used-version='0.5.0'
+
+[com/ubuntu/update-notifier]
+release-check-time=uint32 1733007172
+
+[desktop/ibus/general]
+preload-engines=['xkb:gb::eng']
+version='1.5.29'
+
+[org/gnome/clocks]
+timers=@aa{sv} []
+world-clocks=[{'location': <(uint32 2, <('Paris', 'LFPB', true, [(0.85462956287765413, 0.042760566673861078)], [(0.8528842336256599, 0.040724343395436846)])>)>}, {'location': <(uint32 2, <('New York', 'KNYC', true, [(0.71180344078725644, -1.2909618758762367)], [(0.71059804659265924, -1.2916478949920254)])>)>}, {'location': <(uint32 2, <('London', 'EGWU', true, [(0.89971722940307675, -0.007272211034407213)], [(0.89884456477707964, -0.0020362232784242244)])>)>}]
+
+[org/gnome/clocks/state/window]
+maximized=false
+panel-id='timer'
+size=(870, 690)
+
+[org/gnome/control-center]
+last-panel='keyboard'
+window-state=(980, 640, true)
+
+[org/gnome/deja-dup]
+backend='google'
+prompt-check='2024-12-01T16:32:10.417595Z'
+
+[org/gnome/desktop/app-folders]
+folder-children=['Utilities', 'YaST', 'Pardus']
+
+[org/gnome/desktop/app-folders/folders/Pardus]
+categories=['X-Pardus-Apps']
+name='X-Pardus-Apps.directory'
+translate=true
+
+[org/gnome/desktop/app-folders/folders/Utilities]
+apps=['gnome-abrt.desktop', 'gnome-system-log.desktop', 'nm-connection-editor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.Connections.desktop', 'org.gnome.DejaDup.desktop', 'org.gnome.Dictionary.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.Evince.desktop', 'org.gnome.FileRoller.desktop', 'org.gnome.fonts.desktop', 'org.gnome.Loupe.desktop', 'org.gnome.seahorse.Application.desktop', 'org.gnome.tweaks.desktop', 'org.gnome.Usage.desktop', 'vinagre.desktop']
+categories=['X-GNOME-Utilities']
+name='X-GNOME-Utilities.directory'
+translate=true
+
+[org/gnome/desktop/app-folders/folders/YaST]
+categories=['X-SuSE-YaST']
+name='suse-yast.directory'
+translate=true
+
+[org/gnome/desktop/background]
+color-shading-type='solid'
+picture-options='zoom'
+picture-uri='file:///home/willneve/.local/share/backgrounds/2024-12-01-12-58-53-cloud-caravan.jpg'
+picture-uri-dark='file:///home/willneve/.local/share/backgrounds/2024-12-01-12-58-53-cloud-caravan.jpg'
+primary-color='#000000000000'
+secondary-color='#000000000000'
+
+[org/gnome/desktop/input-sources]
+sources=[('xkb', 'gb')]
+
+[org/gnome/desktop/interface]
+color-scheme='prefer-dark'
+cursor-theme='c-macchiato-mauve-cursors'
+gtk-theme='catppuccin-macchiato-mauve-standard+default'
+icon-theme='Tela-circle'
+show-battery-percentage=true
+toolkit-accessibility=false
+
+[org/gnome/desktop/notifications]
+application-children=['apport-gtk', 'spotify', 'gnome-power-panel', 'org-gnome-clocks']
+
+[org/gnome/desktop/notifications/application/apport-gtk]
+application-id='apport-gtk.desktop'
+
+[org/gnome/desktop/notifications/application/gnome-power-panel]
+application-id='gnome-power-panel.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-clocks]
+application-id='org.gnome.clocks.desktop'
+
+[org/gnome/desktop/notifications/application/spotify]
+application-id='spotify.desktop'
+
+[org/gnome/desktop/peripherals/touchpad]
+speed=0.80076628352490431
+tap-to-click=true
+two-finger-scrolling-enabled=true
+
+[org/gnome/desktop/screensaver]
+color-shading-type='solid'
+picture-options='zoom'
+picture-uri='file:///home/willneve/.local/share/backgrounds/2024-12-01-12-58-53-cloud-caravan.jpg'
+primary-color='#000000000000'
+secondary-color='#000000000000'
+
+[org/gnome/desktop/sound]
+event-sounds=true
+
+[org/gnome/desktop/wm/keybindings]
+switch-to-workspace-left=['<Control><Super>Left']
+switch-to-workspace-right=['<Control><Super>Right']
+
+[org/gnome/desktop/wm/preferences]
+num-workspaces=3
+
+[org/gnome/evolution-data-server]
+migrated=true
+
+[org/gnome/mutter]
+dynamic-workspaces=false
+edge-tiling=false
+experimental-features=['x11-randr-fractional-scaling']
+
+[org/gnome/mutter/keybindings]
+toggle-tiled-left=@as []
+toggle-tiled-right=@as []
+
+[org/gnome/nautilus/preferences]
+migrated-gtk-settings=true
+
+[org/gnome/settings-daemon/plugins/power]
+power-button-action='suspend'
+sleep-inactive-ac-timeout=900
+sleep-inactive-ac-type='suspend'
+
+[org/gnome/shell]
+enabled-extensions=['user-theme@gnome-shell-extensions.gcampax.github.com', 'ding@rastersoft.com', 'ubuntu-dock@ubuntu.com', 'tiling-assistant@ubuntu.com', 'lockscreen-extension@pratap.fastmail.fm', 'dash-to-dock@micxgx.gmail.com', 'ControlBlurEffectOnLockScreen@pratap.fastmail.fm', 'mprisLabel@moon-0xff.github.com', 'panel-date-format@keiii.github.com']
+favorite-apps=['org.gnome.Nautilus.desktop', 'obsidian.desktop', 'google-chrome.desktop', 'org.gnome.Terminal.desktop', 'code.desktop', 'spotify.desktop']
+last-selected-power-profile='power-saver'
+welcome-dialog-last-shown-version='46.0'
+
+[org/gnome/shell/extensions/dash-to-dock]
+background-opacity=0.80000000000000004
+custom-theme-shrink=true
+dash-max-icon-size=32
+dock-fixed=false
+dock-position='BOTTOM'
+height-fraction=0.90000000000000002
+preferred-monitor=-2
+preferred-monitor-by-connector='eDP-1'
+show-apps-at-top=true
+show-trash=false
+
+[org/gnome/shell/extensions/ding]
+icon-size='small'
+start-corner='top-left'
+
+[org/gnome/shell/extensions/mpris-label]
+album-size=30
+double-click-time=300
+enable-double-clicks=true
+first-field='xesam:title'
+font-color='rgb(119,118,123)'
+icon-padding=10
+last-field=''
+left-click-action='play-pause'
+max-string-length=25
+second-field='xesam:artist'
+symbolic-source-icon=false
+
+[org/gnome/shell/extensions/panel-date-format]
+format='%a %d %b %Y %H:%M\n'
+
+[org/gnome/shell/extensions/tiling-assistant]
+active-window-hint-color='rgb(198,160,246)'
+last-version-installed=46
+overridden-settings={'org.gnome.mutter.edge-tiling': <@mb nothing>, 'org.gnome.mutter.keybindings.toggle-tiled-left': <@mb nothing>, 'org.gnome.mutter.keybindings.toggle-tiled-right': <@mb nothing>}
+tiling-popup-all-workspace=true
+
+[org/gnome/shell/extensions/user-theme]
+name='catppuccin-macchiato-mauve-standard+default'
+
+[org/gnome/shell/world-clocks]
+locations=[<(uint32 2, <('Paris', 'LFPB', true, [(0.85462956287765413, 0.042760566673861078)], [(0.8528842336256599, 0.040724343395436846)])>)>, <(uint32 2, <('New York', 'KNYC', true, [(0.71180344078725644, -1.2909618758762367)], [(0.71059804659265924, -1.2916478949920254)])>)>, <(uint32 2, <('London', 'EGWU', true, [(0.89971722940307675, -0.007272211034407213)], [(0.89884456477707964, -0.0020362232784242244)])>)>]
+
+[org/gnome/terminal/legacy/keybindings]
+copy='<Primary>c'
+paste='<Primary>v'
+
+[org/gnome/terminal/legacy/profiles:]
+default='5083e06b-024e-46be-9cd2-892b814f1fc8'
+list=['de8a9081-8352-4ce4-9519-5de655ad9361', '71a9971e-e829-43a9-9b2f-4565c855d664', '5083e06b-024e-46be-9cd2-892b814f1fc8', '95894cfd-82f7-430d-af6e-84d168bc34f5']
+
+[org/gnome/terminal/legacy/profiles:/:5083e06b-024e-46be-9cd2-892b814f1fc8]
+audible-bell=false
+background-color='#24273a'
+bold-is-bright=true
+cursor-background-color='#f4dbd6'
+cursor-blink-mode='off'
+cursor-colors-set=true
+cursor-foreground-color='#24273a'
+default-size-columns=114
+default-size-rows=24
+font='JetBrainsMono Nerd Font Mono 12'
+foreground-color='#cad3f5'
+highlight-background-color='#f4dbd6'
+highlight-colors-set=true
+highlight-foreground-color='#5b6078'
+palette=['#494d64', '#ed8796', '#a6da95', '#eed49f', '#8aadf4', '#f5bde6', '#8bd5ca', '#a5adcb', '#5b6078', '#ec7486', '#8ccf7f', '#e1c682', '#78a1f6', '#f2a9dd', '#63cbc0', '#b8c0e0']
+use-system-font=false
+use-theme-colors=false
+visible-name='Catppuccin Macchiato'
+
+[org/gnome/terminal/legacy/profiles:/:71a9971e-e829-43a9-9b2f-4565c855d664]
+background-color='#303446'
+bold-is-bright=true
+cursor-background-color='#f2d5cf'
+cursor-colors-set=true
+cursor-foreground-color='#303446'
+foreground-color='#c6d0f5'
+highlight-background-color='#f2d5cf'
+highlight-colors-set=true
+highlight-foreground-color='#626880'
+palette=['#51576d', '#e78284', '#a6d189', '#e5c890', '#8caaee', '#f4b8e4', '#81c8be', '#a5adce', '#626880', '#e67172', '#8ec772', '#d9ba73', '#7b9ef0', '#f2a4db', '#5abfb5', '#b5bfe2']
+use-theme-colors=false
+visible-name='Catppuccin Frappe'
+
+[org/gnome/terminal/legacy/profiles:/:95894cfd-82f7-430d-af6e-84d168bc34f5]
+background-color='#1e1e2e'
+bold-is-bright=true
+cursor-background-color='#f5e0dc'
+cursor-colors-set=true
+cursor-foreground-color='#1e1e2e'
+foreground-color='#cdd6f4'
+highlight-background-color='#f5e0dc'
+highlight-colors-set=true
+highlight-foreground-color='#585b70'
+palette=['#45475a', '#f38ba8', '#a6e3a1', '#f9e2af', '#89b4fa', '#f5c2e7', '#94e2d5', '#a6adc8', '#585b70', '#f37799', '#89d88b', '#ebd391', '#74a8fc', '#f2aede', '#6bd7ca', '#bac2de']
+use-theme-colors=false
+visible-name='Catppuccin Mocha'
+
+[org/gnome/terminal/legacy/profiles:/:de8a9081-8352-4ce4-9519-5de655ad9361]
+background-color='#eff1f5'
+bold-is-bright=true
+cursor-background-color='#dc8a78'
+cursor-colors-set=true
+cursor-foreground-color='#eff1f5'
+foreground-color='#4c4f69'
+highlight-background-color='#dc8a78'
+highlight-colors-set=true
+highlight-foreground-color='#acb0be'
+palette=['#5c5f77', '#d20f39', '#40a02b', '#df8e1d', '#1e66f5', '#ea76cb', '#179299', '#acb0be', '#6c6f85', '#de293e', '#49af3d', '#eea02d', '#456eff', '#fe85d8', '#2d9fa8', '#bcc0cc']
+use-theme-colors=false
+visible-name='Catppuccin Latte'
+
+[org/gtk/gtk4/settings/color-chooser]
+selected-color=(true, 0.46666666865348816, 0.46274510025978088, 0.48235294222831726, 1.0)
+
+[org/gtk/gtk4/settings/file-chooser]
+date-format='regular'
+location-mode='path-bar'
+show-hidden=false
+sidebar-width=140
+sort-column='name'
+sort-directories-first=false
+sort-order='ascending'
+type-format='category'
+view-type='list'
+window-size=(821, 372)
+
+[org/gtk/settings/file-chooser]
+date-format='regular'
+location-mode='path-bar'
+show-hidden=false
+show-size-column=true
+show-type-column=true
+sidebar-width=168
+sort-column='name'
+sort-directories-first=false
+sort-order='ascending'
+type-format='category'
+window-position=(136, 43)
+window-size=(1231, 902)
