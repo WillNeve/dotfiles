@@ -52,5 +52,6 @@
   "emmet.includeLanguages": {
     "erb": "html"
   },
-  "editor.fontFamily": "JetBrainsMono NF, Consolas, 'Courier New', monospace"
+  "editor.fontFamily": "JetBrainsMono NF, Consolas, 'Courier New', monospace",
+  "workbench.editor.wrapTabs": true
 }
