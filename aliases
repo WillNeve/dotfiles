@@ -1,14 +1,14 @@
-# [Navigation]
+# [Augmented Commands]
 # lsd instead of ls if available
 if command -v lsd &> /dev/null; then
     alias ls='lsd'
 fi
+alias glp='git log --pretty=format:"%C(yellow)%h%Creset - %C(green)%an%Creset, %ar : %s"'
 ## [Named Places]
 alias dotfiles="cd $HOME/dotfiles"
 alias setup="cd $HOME/setup"
+# [Util]
 alias load-dconf="sh $HOME/dotfiles/load-dconf-settings.sh"
 alias backup-dconf="sh $HOME/dotfiles/backup-dconf-settings.sh"
-
-# [Util]
 ## Quickly serve the current directory as HTTP
 alias serve="ruby -run -e httpd . -p 8000"
