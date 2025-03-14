@@ -3,5 +3,10 @@
     "key": "ctrl+shift+v",
     "command": "pasteAndIndent.action",
     "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "alt+8",
+    "command": "go-to-next-error.nextInFiles.error",
+    "when": "editorFocus"
   }
 ]
