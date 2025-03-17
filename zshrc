@@ -21,7 +21,7 @@ fi
 # [ENV Exports]
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-export BROWSER='/mnt/c/Program Files(x86)/Google/Chrome/Application/chrome.exe' # Link to Windows 11 Browser Exe
+export BROWSER="wslview" # Link to Windows 11 Default Browser Executable
 export EDITOR=code
 export BUNDLER_EDITOR=code
 

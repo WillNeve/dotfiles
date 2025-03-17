@@ -11,5 +11,41 @@ alias setup="cd $HOME/setup"
 # [Util]
 alias load-dconf="sh $HOME/dotfiles/load-dconf-settings.sh"
 alias backup-dconf="sh $HOME/dotfiles/backup-dconf-settings.sh"
+# [Git]
+function ghcreate() {
+  if [ ! -d .git ]; then
+    echo "Initializing new repository..."
+    git init
+  else
+    echo "Repository already initialized"
+  fi
+
+  echo "Setting up conventional commits..."
+
+  npm install --save-dev husky @commitlint/config-conventional @commitlint/cli
+  if [ -f "package.json" ]; then
+    npx --yes husky-init
+    rm .husky/pre-commit
+    npx --yes husky add .husky/commit-msg 'npx --no -- commitlint --edit $1'
+    echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitlint.config.js
+
+    echo "Conventional commits setup complete!"
+  else
+    echo "No package.json found. Skipping conventional commits setup."
+  fi
+
+  if [ ! -f README.md ] && [ ! -f readme.md ] && [ ! -f Readme.md ]; then
+    echo "# $(basename "$(pwd)")" > README.md
+    echo "Creating README.md file"
+  fi
+
+  git add .
+  git commit -m "chore: initial commit"
+  gh repo create --private --source=. --push
+  git branch -M main
+  git push -u origin main
+  gh repo view --web
+}
+
 ## Quickly serve the current directory as HTTP
 alias serve="ruby -run -e httpd . -p 8000"
