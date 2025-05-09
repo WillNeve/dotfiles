@@ -46,7 +46,7 @@
   "workbench.settings.useSplitJSON": true,
   "workbench.startupEditor": "newUntitledFile",
   "workbench.panel.defaultLocation": "right",
-  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.colorTheme": "Catppuccin Macchiato",
   "workbench.sideBar.location": "right",
   // [Language/Extension Specific Settings]
   "emmet.includeLanguages": {
