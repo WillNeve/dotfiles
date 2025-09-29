@@ -1,0 +1,9 @@
+# [Augmented Commands]
+
+if command -v lsd &> /dev/null; then
+    alias ls='lsd'
+fi
+
+alias glp='git log --pretty=format:"%C(yellow)%h%Creset - %C(green)%an%Creset, %ar : %s"'
+alias glluc="git log --graph --all --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue)%an%Creset %C(yellow)%d%Creset'"
+alias code='cursor'

@@ -1,0 +1,70 @@
+# Ghostty Terminal Configuration
+# Using Catppuccin Macchiato theme with useful plugins and modern settings
+
+# Theme Configuration
+theme = catppuccin-macchiato
+
+# Color overrides to ensure p10k colors show properly
+background = #24273a
+foreground = #cad3f5
+
+# Font Configuration
+font-family = JetBrainsMono NF Light
+font-size = 14
+font-thicken = false
+font-feature = -liga
+
+# Window Configuration
+window-title-font-family = JetBrainsMono NF Light
+window-height = 30
+window-width = 120
+window-padding-x = 10
+window-padding-y = 10
+window-save-state = always
+window-inherit-working-directory = true
+
+# Background and Opacity
+background-opacity = 0.95
+background-blur-radius = 20
+
+# Terminal Behavior
+scrollback-limit = 10000
+mouse-hide-while-typing = true
+copy-on-select = clipboard
+clipboard-read = allow
+clipboard-write = allow
+clipboard-paste-protection = false
+clipboard-paste-bracketed-safe = true
+
+# macOS Specific Settings
+macos-titlebar-proxy-icon = hidden
+macos-option-as-alt = true
+quit-after-last-window-closed = true
+
+# Shell Integration
+shell-integration = detect
+command = /bin/zsh
+
+# Cursor Configuration
+cursor-style = block
+cursor-style-blink = true
+
+# Quick Terminal (Drop-down terminal)
+quick-terminal-position = top
+quick-terminal-screen = main
+quick-terminal-autohide = true
+
+# Key Bindings
+keybind = global:cmd+grave_accent=toggle_quick_terminal
+keybind = global:cmd+shift+enter=toggle_fullscreen
+keybind = cmd+plus=increase_font_size:1
+keybind = cmd+minus=decrease_font_size:1
+keybind = cmd+0=reset_font_size
+keybind = cmd+shift+,=reload_config
+
+# Performance Settings
+auto-update = check
+auto-update-channel = tip
+
+# Development Features
+gtk-single-instance = false

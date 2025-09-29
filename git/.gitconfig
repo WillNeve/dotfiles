@@ -1,0 +1,29 @@
+[init]
+  defaultBranch = main
+[user]
+	email = william.neve@fyxer.com
+	name = William Neve
+[help]
+  autocorrect = 1
+[core]
+  pager = less -FRSX
+  editor = code --wait
+[alias]
+  clean-branches = !sh ~/scripts/clean-branches.sh
+  co = checkout
+  sweep = !git branch --merged $(git defaultBranch) | grep -E -v " $(git defaultBranch)$" | xargs -r git branch -d && git remote prune origin
+[push]
+	default = simple
+[pull]
+  rebase = false
+[branch "master"]
+  mergeoptions = --no-edit
+[color]
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
+  ui = auto
+[color "branch"]
+  current = green
+  remote = yellow
