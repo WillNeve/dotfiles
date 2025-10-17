@@ -6,8 +6,8 @@
 [help]
   autocorrect = 1
 [core]
-  pager = less -FRSX
-  editor = code --wait
+	pager = diff-so-fancy | less --tabs=4 -RF
+	editor = cursor --wait
 [alias]
   clean-branches = !sh ~/scripts/clean-branches.sh
   co = checkout
@@ -27,3 +27,5 @@
 [color "branch"]
   current = green
   remote = yellow
+[interactive]
+	diffFilter = diff-so-fancy --patch

@@ -1,33 +1,36 @@
-#!/bin/bash
-# Install script for dotfiles
+#!/usr/bin/env bash
+
+DOTFILES_DIR="$HOME/code/dotfiles"
+
+symlinks=(
+  "$DOTFILES_DIR/zsh/.zshrc|$HOME/.zshrc"
+  "$DOTFILES_DIR/zsh/.aliases|$HOME/.aliases"
+  "$DOTFILES_DIR/p10k/.p10k.zsh|$HOME/.p10k.zsh"
+  "$DOTFILES_DIR/git/.gitconfig|$HOME/.gitconfig"
+  "$DOTFILES_DIR/git/.gitignore_global|$HOME/.gitignore"
+  "$DOTFILES_DIR/tmux/.tmux.conf|$HOME/.tmux.conf"
+  "$DOTFILES_DIR/github/config.yml|$HOME/.config/gh/config.yml"
+  "$DOTFILES_DIR/github/hosts.yml|$HOME/.config/gh/hosts.yml"
+  "$DOTFILES_DIR/ghostty/config|$HOME/.config/ghostty/config"
+  "$DOTFILES_DIR/neofetch/config.conf|$HOME/.config/neofetch/config.conf"
+  "$DOTFILES_DIR/htop/htoprc|$HOME/.config/htop/htoprc"
+)
 
 echo "Creating symlinks for dotfiles..."
 
-# Zsh configuration
-ln -sf ~/willneve/dotfiles/zsh/.zshrc ~/.zshrc
-ln -sf ~/willneve/dotfiles/zsh/.aliases ~/.aliases
-
-# P10k configuration
-ln -sf ~/willneve/dotfiles/p10k/.p10k.zsh ~/.p10k.zsh
-
-# Git configuration
-ln -sf ~/willneve/dotfiles/git/.gitconfig ~/.gitconfig
-ln -sf ~/willneve/dotfiles/git/.gitignore_global ~/.gitignore
-
-# Tmux configuration
-ln -sf ~/willneve/dotfiles/tmux/.tmux.conf ~/.tmux.conf
-
-# Create config directories if they don't exist
-mkdir -p ~/.config/gh ~/.config/ghostty ~/.config/neofetch
-
-# GitHub CLI configuration
-ln -sf ~/willneve/dotfiles/github/config.yml ~/.config/gh/config.yml
-ln -sf ~/willneve/dotfiles/github/hosts.yml ~/.config/gh/hosts.yml
-
-# Ghostty configuration
-ln -sf ~/willneve/dotfiles/ghostty/config ~/.config/ghostty/config
-
-# Neofetch configuration
-ln -sf ~/willneve/dotfiles/neofetch/config.conf ~/.config/neofetch/config.conf
+for entry in "${symlinks[@]}"; do
+  IFS='|' read -r source target <<< "$entry"
+  target_dir="$(dirname "$target")"
+  
+  mkdir -p "$target_dir"
+  
+  if [ -e "$target" ] && [ ! -L "$target" ]; then
+    echo "Warning: $target exists and is not a symlink. Skipping..."
+    continue
+  fi
+  
+  ln -sf "$source" "$target"
+  echo "✓ Linked: $target -> $source"
+done
 
 echo "Dotfiles symlinks created successfully!"
