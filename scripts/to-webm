@@ -1,0 +1,35 @@
+#!/bin/bash
+
+if [[ $# -eq 0 ]]; then
+    echo "Usage: to-webm [options] <video_file> [video_file] ..."
+    echo "Options are passed directly to ffmpeg"
+    exit 1
+fi
+
+declare -a ffmpeg_args=("-an" "-vf" "scale=1920:1080:force_original_aspect_ratio=decrease")
+declare -a input_files=()
+
+for arg in "$@"; do
+    if [[ "$arg" == -* ]]; then
+        ffmpeg_args+=("$arg")
+    else
+        input_files+=("$arg")
+    fi
+done
+
+if [[ ${#input_files[@]} -eq 0 ]]; then
+    echo "Error: No input files specified"
+    exit 1
+fi
+
+for file in "${input_files[@]}"; do
+    if [[ ! -f "$file" ]]; then
+        echo "Error: File not found: $file"
+        continue
+    fi
+    
+    base="${file%.*}"
+    output="${base}.webm"
+    
+    ffmpeg -i "$file" "${ffmpeg_args[@]}" "$output"
+done
