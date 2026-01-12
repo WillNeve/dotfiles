@@ -5,21 +5,38 @@
 
 SCRIPTS_DIR="$(cd "$(dirname "$0")" && pwd)"
 
-# Iterate through each subdirectory in scripts (1 level deep)
-for subdir in "$SCRIPTS_DIR"/*; do
-  if [[ -d "$subdir" ]]; then
-    local subdir_name=$(basename "$subdir")
+load_dotfiles_scripts() {
+  for subdir in "$SCRIPTS_DIR"/*; do
+    [[ -d "$subdir" ]] || continue
 
-    # Process all .sh files in the subdirectory
-    for script in "$subdir"/*.sh; do
-      if [[ -f "$script" ]]; then
-        # Make script executable
-        chmod +x "$script"
+    local subdir_name
+    subdir_name="$(basename "$subdir")"
 
-        # Create alias based on script filename (without .sh extension)
-        local script_name=$(basename "$script" .sh)
-        alias "$script_name"="$script"
+    local script_paths=()
+    if [[ -n "${ZSH_VERSION:-}" ]]; then
+      setopt local_options null_glob
+      script_paths=("$subdir"/*.sh)
+    else
+      shopt -s nullglob 2>/dev/null
+      script_paths=("$subdir"/*.sh)
+      shopt -u nullglob 2>/dev/null
+    fi
+
+    for script in "${script_paths[@]}"; do
+      [[ -f "$script" ]] || continue
+
+      chmod +x "$script"
+
+      local script_name
+      script_name="$(basename "$script" .sh)"
+
+      alias "$script_name"="$script"
+
+      if [[ "$(basename "$script")" == "main.sh" ]]; then
+        alias "$subdir_name"="$script"
       fi
     done
-  fi
-done
+  done
+}
+
+load_dotfiles_scripts
