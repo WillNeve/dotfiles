@@ -33,8 +33,13 @@ export NVM_DIR=/Users/willneve/.nvm
 [ -s /opt/homebrew/opt/nvm/nvm.sh ] && \. /opt/homebrew/opt/nvm/nvm.sh  # This loads nvm
 [ -s /opt/homebrew/opt/nvm/etc/bash_completion.d/nvm ] && \. /opt/homebrew/opt/nvm/etc/bash_completion.d/nvm  # This loads nvm bash_completion
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# To customize prompt, run `p10k configure` or edit the p10k configs.
+# Theme-aware p10k configuration (auto-detects dark/light mode)
+if [[ -f "$HOME/code/dotfiles/p10k/theme-detect.zsh" ]]; then
+  source "$HOME/code/dotfiles/p10k/theme-detect.zsh"
+elif [[ -f ~/.p10k.zsh ]]; then
+  source ~/.p10k.zsh
+fi
 
 # Java
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
