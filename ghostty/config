@@ -1,12 +1,8 @@
 # Ghostty Terminal Configuration
 # Using Catppuccin Macchiato theme with useful plugins and modern settings
 
-# Theme Configuration
-theme = catppuccin-macchiato
-
-# Color overrides to ensure p10k colors show properly
-background = #24273a
-foreground = #cad3f5
+# Theme Configuration - auto-switches with system dark/light mode
+theme = light:Catppuccin Latte,dark:Catppuccin Macchiato
 
 # Font Configuration
 font-family = JetBrainsMono NF Light

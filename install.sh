@@ -11,7 +11,7 @@ symlinks=(
   "$DOTFILES_DIR/tmux/.tmux.conf|$HOME/.tmux.conf"
   "$DOTFILES_DIR/github/config.yml|$HOME/.config/gh/config.yml"
   "$DOTFILES_DIR/github/hosts.yml|$HOME/.config/gh/hosts.yml"
-  "$DOTFILES_DIR/ghostty/config|$HOME/.config/ghostty/config"
+  "$DOTFILES_DIR/ghostty/config|$HOME/Library/Application Support/com.mitchellh.ghostty/config"
   "$DOTFILES_DIR/neofetch/config.conf|$HOME/.config/neofetch/config.conf"
   "$DOTFILES_DIR/htop/htoprc|$HOME/.config/htop/htoprc"
 )

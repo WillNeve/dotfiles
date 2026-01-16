@@ -53,3 +53,11 @@ alias pip='python3 -m pip'
 
 # Added by Windsurf
 export PATH="/Users/willneve/.codeium/windsurf/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/Users/willneve/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
