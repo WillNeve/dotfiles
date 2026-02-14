@@ -48,19 +48,19 @@ tmux split-window -v -t "$SESSION_NAME":1.0 -c "$PROJECT_DIR"
 tmux split-window -v -t "$SESSION_NAME":1.1 -c "$PROJECT_DIR"
 
 # Run initial setup commands in repo root (pane 0 - top-left)
-tmux send-keys -t "$SESSION_NAME":1.0 "npm i" C-m
+tmux send-keys -t "$SESSION_NAME":1.0 "pnpm i" C-m
 
-# Pane 1 (top-right): shared distribute, then sync-functions build:watch
-tmux send-keys -t "$SESSION_NAME":1.1 "cd shared && npm i && npm run distribute && tmux wait-for -S shared-ready && cd ../sync-functions && npm i && npm run build:watch" C-m
+# Pane 1 (top-right): sync-functions build:watch
+tmux send-keys -t "$SESSION_NAME":1.1 "cd sync-functions && pnpm run build:watch" C-m
 
-# Pane 2 (bottom-left): functions install and build:watch
-tmux send-keys -t "$SESSION_NAME":1.2 "cd functions && npm i && tmux wait-for -S functions-installed && npm run build:watch" C-m
+# Pane 2 (bottom-left): functions build:watch
+tmux send-keys -t "$SESSION_NAME":1.2 "cd functions && pnpm run build:watch" C-m
 
-# Pane 3 (bottom-right): functions dev (wait for install to complete)
-tmux send-keys -t "$SESSION_NAME":1.3 "tmux wait-for functions-installed && cd functions && (command -v kill-port >/dev/null 2>&1 && kill-port 8085 || true) && npm run dev" C-m
+# Pane 3 (bottom-right): functions dev
+tmux send-keys -t "$SESSION_NAME":1.3 "cd functions && (command -v kill-port >/dev/null 2>&1 && kill-port 8085 || true) && pnpm run dev" C-m
 
-# Wait for shared to be ready, then run the app dev command
-tmux send-keys -t "$SESSION_NAME":1.0 "tmux wait-for shared-ready && cd app && npm i && (command -v kill-port >/dev/null 2>&1 && kill-port 5173 || true) && npm run dev" C-m
+# Run the app dev command (pane 0 continues after install)
+tmux send-keys -t "$SESSION_NAME":1.0 "cd app && (command -v kill-port >/dev/null 2>&1 && kill-port 5173 || true) && pnpm run dev" C-m
 
 # Switch back to Window 1 by default
 tmux select-window -t "$SESSION_NAME":0
