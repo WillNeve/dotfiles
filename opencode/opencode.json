@@ -1,0 +1,69 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "enabled_providers": ["openrouter"],
+  "mcp": {
+    "linear": {
+      "type": "remote",
+      "url": "https://mcp.linear.app/mcp"
+    },
+    "notion": {
+      "type": "remote",
+      "url": "https://mcp.notion.com/mcp"
+    },
+    "posthog": {
+      "type": "remote",
+      "url": "https://mcp-eu.posthog.com/mcp"
+    },
+    "dot": {
+      "type": "remote",
+      "oauth": false,
+      "url": "https://eu.getdot.ai/ai/mcp?token={env:DOT_MCP_TOKEN}"
+    },
+    "slack": {
+      "type": "remote",
+      "url": "https://mcp.slack.com/mcp",
+      "headers": {
+        "Authorization": "Bearer {env:SLACK_ACCESS_TOKEN}"
+      }
+    }
+  },
+  "agent": {
+    "build": {
+      "model": "openrouter/google/gemini-3-flash"
+    },
+    "plan": {
+      "model": "openrouter/anthropic/claude-sonnet-4.6"
+    },
+    "heavy-planner ($$$)": {
+      "description": "Heavy code dev & complex experiments — deep strategy, experiment design, complex optimizations",
+      "mode": "primary",
+      "model": "openrouter/anthropic/claude-opus-4.6",
+      "prompt": "You are a strategic planner for growth engineering. Analyze the task, output a JSON: {'plan': 'detailed steps', 'criteria': 'review points', 'execution': 'CLI/API directives'}. Be precise, minimize tokens."
+    },
+    "everyday-planner ($$)": {
+      "description": "Routine tasks — simple A/B experiments, basic implementations, automation/workflows, ticket/PR management",
+      "mode": "primary",
+      "model": "openrouter/anthropic/claude-sonnet-4.6",
+      "prompt": "You are an efficient planner for daily growth tasks. From input, generate JSON: {'plan': 'concise steps', 'criteria': 'key checks', 'execution': 'simple ops'}. Route to smaller executor for light work. Be precise, minimize tokens."
+    },
+    "reviewer ($$)": {
+      "description": "Quality reviewer — iterative validation across experiments, code, and automation",
+      "mode": "primary",
+      "model": "openrouter/google/gemini-3-pro",
+      "prompt": "You are a quality reviewer. Take planner JSON and input, refine for accuracy/efficiency. Output updated JSON or approval flag. Flag escalations to heavy planner."
+    },
+    "executor ($)": {
+      "description": "Task executor — API calls, ticket updates via MCPs, script runs",
+      "mode": "primary",
+      "model": "openrouter/deepseek/deepseek-v3.2",
+      "prompt": "You are a task executor. From planner/reviewer JSON, run CLI ops (e.g., GitHub API for PRs, Jira for tickets). Output results only; no planning."
+    },
+    "code-executor ($)": {
+      "description": "Fast code/script execution — generate and run code snippets",
+      "mode": "primary",
+      "model": "openrouter/google/gemini-3-flash",
+      "prompt": "You are a code executor. From planner/reviewer JSON, generate/execute code snippets, output results only. Focus on fast, accurate runs; no additional planning. Limit tokens and list changes in concise bullet points after task completion."
+    }
+  },
+  "autoupdate": true
+}
