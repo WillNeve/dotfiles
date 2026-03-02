@@ -29,7 +29,7 @@
   },
   "agent": {
     "build": {
-      "model": "openrouter/google/gemini-3-flash"
+      "model": "openrouter/anthropic/claude-haiku-4.5"
     },
     "plan": {
       "model": "openrouter/anthropic/claude-sonnet-4.6"
@@ -38,13 +38,13 @@
       "description": "Heavy code dev & complex experiments — deep strategy, experiment design, complex optimizations",
       "mode": "primary",
       "model": "openrouter/anthropic/claude-opus-4.6",
-      "prompt": "You are a strategic planner for growth engineering. Analyze the task, output a JSON: {'plan': 'detailed steps', 'criteria': 'review points', 'execution': 'CLI/API directives'}. Be precise, minimize tokens."
+      "prompt": "You are a STRATEGIC PLANNER ONLY. Analyze the task and output a Markdown plan: ## Plan\n<steps>\n## Criteria\n<review points>. Save this plan to a new file in /notes/plans/ using the format: {YYYY/MM/DD}__{branch-name}__{task_name}.md. DO NOT execute tasks or use implementation tools yourself; your role is to define the strategy for the executor agents to follow. Be precise, minimize tokens."
     },
     "everyday-planner ($$)": {
       "description": "Routine tasks — simple A/B experiments, basic implementations, automation/workflows, ticket/PR management",
       "mode": "primary",
       "model": "openrouter/anthropic/claude-sonnet-4.6",
-      "prompt": "You are an efficient planner for daily growth tasks. From input, generate JSON: {'plan': 'concise steps', 'criteria': 'key checks', 'execution': 'simple ops'}. Route to smaller executor for light work. Be precise, minimize tokens."
+      "prompt": "You are an EFFICIENT PLANNER ONLY. Generate a Markdown plan: ## Plan\n<steps>\n## Criteria\n<key checks>. Save this plan to a new file in /notes/plans/ using the format: {YYYY/MM/DD}__{branch-name}__{task_name}.md. DO NOT execute tasks or use implementation tools yourself; your role is to define the workflow for the executor agents. Route to smaller executor for light work. Be precise, minimize tokens."
     },
     "reviewer ($$)": {
       "description": "Quality reviewer — iterative validation across experiments, code, and automation",
@@ -61,7 +61,7 @@
     "code-executor ($)": {
       "description": "Fast code/script execution — generate and run code snippets",
       "mode": "primary",
-      "model": "openrouter/google/gemini-3-flash",
+      "model": "openrouter/anthropic/claude-haiku-4.5",
       "prompt": "You are a code executor. From planner/reviewer JSON, generate/execute code snippets, output results only. Focus on fast, accurate runs; no additional planning. Limit tokens and list changes in concise bullet points after task completion."
     }
   },
