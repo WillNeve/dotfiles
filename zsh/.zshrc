@@ -66,3 +66,5 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+export DIRENV_LOG_FORMAT=""
+eval "$(direnv hook zsh)"

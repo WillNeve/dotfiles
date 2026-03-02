@@ -1,0 +1,10 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "instructions": ["AGENTS.md"],
+  "formatter": {
+    "eslint": {
+      "command": ["npx", "eslint", "--fix", "$FILE"],
+      "extensions": [".js", ".jsx", ".ts", ".tsx", ".mjs"]
+    }
+  }
+}

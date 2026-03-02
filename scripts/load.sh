@@ -9,8 +9,7 @@ load_dotfiles_scripts() {
   for subdir in "$SCRIPTS_DIR"/*; do
     [[ -d "$subdir" ]] || continue
 
-    local subdir_name
-    subdir_name="$(basename "$subdir")"
+    local subdir_name="$(basename "$subdir")"
 
     local script_paths=()
     if [[ -n "${ZSH_VERSION:-}" ]]; then
@@ -27,8 +26,7 @@ load_dotfiles_scripts() {
 
       chmod +x "$script"
 
-      local script_name
-      script_name="$(basename "$script" .sh)"
+      local script_name="$(basename "$script" .sh)"
 
       alias "$script_name"="$script"
 

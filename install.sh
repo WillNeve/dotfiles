@@ -14,6 +14,7 @@ symlinks=(
   "$DOTFILES_DIR/ghostty/config|$HOME/Library/Application Support/com.mitchellh.ghostty/config"
   "$DOTFILES_DIR/neofetch/config.conf|$HOME/.config/neofetch/config.conf"
   "$DOTFILES_DIR/htop/htoprc|$HOME/.config/htop/htoprc"
+  "$DOTFILES_DIR/opencode.json|$HOME/code/work/fyxer/landing-pages/opencode.json"
 )
 
 echo "Creating symlinks for dotfiles..."
