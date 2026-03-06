@@ -48,6 +48,11 @@ export PATH=/Users/willneve/.opencode/bin:$PATH
 # Prioritize local node_modules/.bin over global packages
 export PATH="./node_modules/.bin:$PATH"
 
+# Load environment variables from .env and .env.local
+if [ -f "$HOME/code/dotfiles/scripts/load-env.sh" ]; then
+  source "$HOME/code/dotfiles/scripts/load-env.sh"
+fi
+
 # Auto-load dotfiles scripts
 if [ -f "$HOME/code/dotfiles/scripts/load.sh" ]; then
   source "$HOME/code/dotfiles/scripts/load.sh"
