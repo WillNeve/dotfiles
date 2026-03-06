@@ -25,6 +25,17 @@
       "headers": {
         "Authorization": "Bearer {env:SLACK_ACCESS_TOKEN}"
       }
+    },
+    "growthbook": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@growthbook/mcp@latest"],
+      "env": {
+        "GB_API_KEY": "{env:GB_API_KEY}",
+        "GB_EMAIL": "{env:GB_EMAIL}",
+        "GB_API_URL": "{env:GB_API_URL}",
+        "GB_APP_ORIGIN": "{env:GB_APP_ORIGIN}"
+      }
     }
   },
   "agent": {
