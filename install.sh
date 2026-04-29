@@ -16,6 +16,8 @@ symlinks=(
   "$DOTFILES_DIR/htop/htoprc|$HOME/.config/htop/htoprc"
   "$DOTFILES_DIR/opencode.json|$HOME/code/work/fyxer/landing-pages/opencode.json"
   "$DOTFILES_DIR/opencode/opencode.json|$HOME/.config/opencode/opencode.json"
+  "$DOTFILES_DIR/opencode/agent-skills/AGENTS.md|$HOME/.config/opencode/AGENTS.md"
+  "$DOTFILES_DIR/opencode/agent-skills/skills|$HOME/.config/opencode/skills"
 )
 
 echo "Creating symlinks for dotfiles..."

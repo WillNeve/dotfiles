@@ -14,67 +14,25 @@
       "type": "remote",
       "url": "https://mcp-eu.posthog.com/mcp"
     },
-    "dot": {
-      "type": "remote",
-      "oauth": false,
-      "url": "https://eu.getdot.ai/ai/mcp?token={env:DOT_MCP_TOKEN}"
-    },
     "slack": {
       "type": "remote",
       "url": "https://mcp.slack.com/mcp",
       "headers": {
         "Authorization": "Bearer {env:SLACK_ACCESS_TOKEN}"
       }
-    },
-    "growthbook": {
-      "type": "stdio",
-      "command": "npx",
-      "args": ["-y", "@growthbook/mcp@latest"],
-      "env": {
-        "GB_API_KEY": "{env:GB_API_KEY}",
-        "GB_EMAIL": "{env:GB_EMAIL}",
-        "GB_API_URL": "{env:GB_API_URL}",
-        "GB_APP_ORIGIN": "{env:GB_APP_ORIGIN}"
-      }
     }
   },
   "agent": {
     "build": {
-      "model": "openrouter/anthropic/claude-haiku-4.5"
+      "model": "openrouter/openai/gpt-5.3-codex"
     },
-    "plan": {
+    "spec": {
+      "model": "openrouter/anthropic/claude-opus-4.7"
+    },
+    "heavy-build": {
       "model": "openrouter/anthropic/claude-sonnet-4.6"
-    },
-    "heavy-planner ($$$)": {
-      "description": "Heavy code dev & complex experiments — deep strategy, experiment design, complex optimizations",
-      "mode": "primary",
-      "model": "openrouter/anthropic/claude-opus-4.6",
-      "prompt": "You are a STRATEGIC PLANNER ONLY. Analyze the task and output a Markdown plan: ## Plan\n<steps>\n## Criteria\n<review points>. Save this plan to a new file in /notes/plans/ using the format: {YYYY/MM/DD}__{branch-name}__{task_name}.md. DO NOT execute tasks or use implementation tools yourself; your role is to define the strategy for the executor agents to follow. Be precise, minimize tokens."
-    },
-    "everyday-planner ($$)": {
-      "description": "Routine tasks — simple A/B experiments, basic implementations, automation/workflows, ticket/PR management",
-      "mode": "primary",
-      "model": "openrouter/anthropic/claude-sonnet-4.6",
-      "prompt": "You are an EFFICIENT PLANNER ONLY. Generate a Markdown plan: ## Plan\n<steps>\n## Criteria\n<key checks>. Save this plan to a new file in /notes/plans/ using the format: {YYYY/MM/DD}__{branch-name}__{task_name}.md. DO NOT execute tasks or use implementation tools yourself; your role is to define the workflow for the executor agents. Route to smaller executor for light work. Be precise, minimize tokens."
-    },
-    "reviewer ($$)": {
-      "description": "Quality reviewer — iterative validation across experiments, code, and automation",
-      "mode": "primary",
-      "model": "openrouter/google/gemini-3-pro",
-      "prompt": "You are a quality reviewer. Take planner JSON and input, refine for accuracy/efficiency. Output updated JSON or approval flag. Flag escalations to heavy planner."
-    },
-    "executor ($)": {
-      "description": "Task executor — API calls, ticket updates via MCPs, script runs",
-      "mode": "primary",
-      "model": "openrouter/deepseek/deepseek-v3.2",
-      "prompt": "You are a task executor. From planner/reviewer JSON, run CLI ops (e.g., GitHub API for PRs, Jira for tickets). Output results only; no planning."
-    },
-    "code-executor ($)": {
-      "description": "Fast code/script execution — generate and run code snippets",
-      "mode": "primary",
-      "model": "openrouter/anthropic/claude-haiku-4.5",
-      "prompt": "You are a code executor. From planner/reviewer JSON, generate/execute code snippets, output results only. Focus on fast, accurate runs; no additional planning. Limit tokens and list changes in concise bullet points after task completion."
     }
   },
+  "instructions": ["~/.config/opencode/AGENTS.md"],
   "autoupdate": true
 }
