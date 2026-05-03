@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
 DOTFILES_DIR="$HOME/code/dotfiles"
+OPENCODE_SKILLS_SOURCE="$DOTFILES_DIR/opencode/skills"
+OPENCODE_SKILLS_CANONICAL="$HOME/.agents/skills"
+OPENCODE_SKILLS_COMPAT="$HOME/.config/opencode/skills"
 
 symlinks=(
   "$DOTFILES_DIR/zsh/.zshrc|$HOME/.zshrc"
@@ -14,11 +17,28 @@ symlinks=(
   "$DOTFILES_DIR/ghostty/config|$HOME/Library/Application Support/com.mitchellh.ghostty/config"
   "$DOTFILES_DIR/neofetch/config.conf|$HOME/.config/neofetch/config.conf"
   "$DOTFILES_DIR/htop/htoprc|$HOME/.config/htop/htoprc"
-  "$DOTFILES_DIR/opencode.json|$HOME/code/work/fyxer/landing-pages/opencode.json"
   "$DOTFILES_DIR/opencode/opencode.json|$HOME/.config/opencode/opencode.json"
-  "$DOTFILES_DIR/opencode/agent-skills/AGENTS.md|$HOME/.config/opencode/AGENTS.md"
-  "$DOTFILES_DIR/opencode/agent-skills/skills|$HOME/.config/opencode/skills"
+  "$DOTFILES_DIR/opencode/AGENTS.md|$HOME/.config/opencode/AGENTS.md"
 )
+
+force_symlink_with_backup() {
+  local source="$1"
+  local target="$2"
+  local target_dir
+
+  target_dir="$(dirname "$target")"
+  mkdir -p "$target_dir"
+
+  if [ -e "$target" ] && [ ! -L "$target" ]; then
+    local backup
+    backup="${target}.bak.$(date +%Y%m%d%H%M%S)"
+    mv "$target" "$backup"
+    echo "↺ Backed up existing path: $target -> $backup"
+  fi
+
+  ln -sfn "$source" "$target"
+  echo "✓ Linked: $target -> $source"
+}
 
 echo "Creating symlinks for dotfiles..."
 
@@ -36,5 +56,13 @@ for entry in "${symlinks[@]}"; do
   ln -sf "$source" "$target"
   echo "✓ Linked: $target -> $source"
 done
+
+if [ -d "$OPENCODE_SKILLS_SOURCE" ]; then
+  echo "Linking OpenCode skills via ~/.agents/skills..."
+  force_symlink_with_backup "$OPENCODE_SKILLS_SOURCE" "$OPENCODE_SKILLS_CANONICAL"
+  force_symlink_with_backup "$OPENCODE_SKILLS_CANONICAL" "$OPENCODE_SKILLS_COMPAT"
+else
+  echo "Warning: OpenCode skills source not found at $OPENCODE_SKILLS_SOURCE"
+fi
 
 echo "Dotfiles symlinks created successfully!"

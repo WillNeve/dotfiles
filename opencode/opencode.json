@@ -13,13 +13,6 @@
     "posthog": {
       "type": "remote",
       "url": "https://mcp-eu.posthog.com/mcp"
-    },
-    "slack": {
-      "type": "remote",
-      "url": "https://mcp.slack.com/mcp",
-      "headers": {
-        "Authorization": "Bearer {env:SLACK_ACCESS_TOKEN}"
-      }
     }
   },
   "agent": {
@@ -31,6 +24,32 @@
     },
     "heavy-build": {
       "model": "openrouter/anthropic/claude-sonnet-4.6"
+    }
+  },
+  "command": {
+    "define": {
+      "description": "Run DEFINE workflow using spec skill",
+      "template": "Use the `spec-driven-development` skill for this request:\n$ARGUMENTS"
+    },
+    "plan": {
+      "description": "Run PLAN workflow using task breakdown skill",
+      "template": "Use the `planning-and-task-breakdown` skill for this request:\n$ARGUMENTS"
+    },
+    "build": {
+      "description": "Run BUILD workflow using implementation and TDD skills",
+      "template": "Use `incremental-implementation` and `test-driven-development` skills for this request:\n$ARGUMENTS"
+    },
+    "verify": {
+      "description": "Run VERIFY workflow using debugging skill",
+      "template": "Use the `debugging-and-error-recovery` skill for this request:\n$ARGUMENTS"
+    },
+    "review": {
+      "description": "Run REVIEW workflow using code review skill",
+      "template": "Use the `code-review-and-quality` skill for this request:\n$ARGUMENTS"
+    },
+    "ship": {
+      "description": "Run SHIP workflow using launch skill",
+      "template": "Use the `shipping-and-launch` skill for this request:\n$ARGUMENTS"
     }
   },
   "instructions": ["~/.config/opencode/AGENTS.md"],
