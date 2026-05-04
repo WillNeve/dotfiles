@@ -1,0 +1,20 @@
+{
+  "default_tool": "opencode",
+  "ai_execution": {
+    "bypass_claude_permissions": true,
+    "bypass_codex_permissions": true,
+    "bypass_opencode_permissions": true,
+    "codex_permission_bypass_mode": "dangerous_bypass",
+    "ai_tab_titles": true
+  },
+  "experimental": {
+    "enabled_providers": [
+      "cursor",
+      "open_code"
+    ],
+    "experimental_providers": [
+      "cursor",
+      "open_code"
+    ]
+  }
+}

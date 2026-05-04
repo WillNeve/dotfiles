@@ -19,6 +19,7 @@ symlinks=(
   "$DOTFILES_DIR/htop/htoprc|$HOME/.config/htop/htoprc"
   "$DOTFILES_DIR/opencode/opencode.json|$HOME/.config/opencode/opencode.json"
   "$DOTFILES_DIR/opencode/AGENTS.md|$HOME/.config/opencode/AGENTS.md"
+  "$DOTFILES_DIR/superconductor/bin/cursor-worktree-layout-bootstrap.sh|$HOME/.superconductor/bin/cursor-worktree-layout-bootstrap.sh"
 )
 
 force_symlink_with_backup() {
@@ -63,6 +64,13 @@ if [ -d "$OPENCODE_SKILLS_SOURCE" ]; then
   force_symlink_with_backup "$OPENCODE_SKILLS_CANONICAL" "$OPENCODE_SKILLS_COMPAT"
 else
   echo "Warning: OpenCode skills source not found at $OPENCODE_SKILLS_SOURCE"
+fi
+
+if [ -x "$DOTFILES_DIR/superconductor/apply-shared-settings.sh" ]; then
+  echo "Applying shared Superconductor settings..."
+  DOTFILES_DIR="$DOTFILES_DIR" "$DOTFILES_DIR/superconductor/apply-shared-settings.sh"
+else
+  echo "Warning: Superconductor shared settings script not found at $DOTFILES_DIR/superconductor/apply-shared-settings.sh"
 fi
 
 echo "Dotfiles symlinks created successfully!"
