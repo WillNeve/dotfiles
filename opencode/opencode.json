@@ -50,6 +50,106 @@
     "ship": {
       "description": "Run SHIP workflow using launch skill",
       "template": "Use the `shipping-and-launch` skill for this request:\n$ARGUMENTS"
+    },
+    "api-and-interface-design": {
+      "description": "Use the api-and-interface-design skill",
+      "template": "Use the `api-and-interface-design` skill for this request:\n$ARGUMENTS"
+    },
+    "ci-cd-and-automation": {
+      "description": "Use the ci-cd-and-automation skill",
+      "template": "Use the `ci-cd-and-automation` skill for this request:\n$ARGUMENTS"
+    },
+    "code-review-and-quality": {
+      "description": "Use the code-review-and-quality skill",
+      "template": "Use the `code-review-and-quality` skill for this request:\n$ARGUMENTS"
+    },
+    "code-simplification": {
+      "description": "Use the code-simplification skill",
+      "template": "Use the `code-simplification` skill for this request:\n$ARGUMENTS"
+    },
+    "context-engineering": {
+      "description": "Use the context-engineering skill",
+      "template": "Use the `context-engineering` skill for this request:\n$ARGUMENTS"
+    },
+    "core-web-vitals": {
+      "description": "Use the core-web-vitals skill",
+      "template": "Use the `core-web-vitals` skill for this request:\n$ARGUMENTS"
+    },
+    "debugging-and-error-recovery": {
+      "description": "Use the debugging-and-error-recovery skill",
+      "template": "Use the `debugging-and-error-recovery` skill for this request:\n$ARGUMENTS"
+    },
+    "deprecation-and-migration": {
+      "description": "Use the deprecation-and-migration skill",
+      "template": "Use the `deprecation-and-migration` skill for this request:\n$ARGUMENTS"
+    },
+    "documentation-and-adrs": {
+      "description": "Use the documentation-and-adrs skill",
+      "template": "Use the `documentation-and-adrs` skill for this request:\n$ARGUMENTS"
+    },
+    "find-skills": {
+      "description": "Use the find-skills skill",
+      "template": "Use the `find-skills` skill for this request:\n$ARGUMENTS"
+    },
+    "frontend-ui-engineering": {
+      "description": "Use the frontend-ui-engineering skill",
+      "template": "Use the `frontend-ui-engineering` skill for this request:\n$ARGUMENTS"
+    },
+    "git-workflow-and-versioning": {
+      "description": "Use the git-workflow-and-versioning skill",
+      "template": "Use the `git-workflow-and-versioning` skill for this request:\n$ARGUMENTS"
+    },
+    "grill-with-docs": {
+      "description": "Use the grill-with-docs skill",
+      "template": "Use the `grill-with-docs` skill for this request:\n$ARGUMENTS"
+    },
+    "idea-refine": {
+      "description": "Use the idea-refine skill",
+      "template": "Use the `idea-refine` skill for this request:\n$ARGUMENTS"
+    },
+    "improve-codebase-architecture": {
+      "description": "Use the improve-codebase-architecture skill",
+      "template": "Use the `improve-codebase-architecture` skill for this request:\n$ARGUMENTS"
+    },
+    "incremental-implementation": {
+      "description": "Use the incremental-implementation skill",
+      "template": "Use the `incremental-implementation` skill for this request:\n$ARGUMENTS"
+    },
+    "performance-optimization": {
+      "description": "Use the performance-optimization skill",
+      "template": "Use the `performance-optimization` skill for this request:\n$ARGUMENTS"
+    },
+    "planning-and-task-breakdown": {
+      "description": "Use the planning-and-task-breakdown skill",
+      "template": "Use the `planning-and-task-breakdown` skill for this request:\n$ARGUMENTS"
+    },
+    "security-and-hardening": {
+      "description": "Use the security-and-hardening skill",
+      "template": "Use the `security-and-hardening` skill for this request:\n$ARGUMENTS"
+    },
+    "shipping-and-launch": {
+      "description": "Use the shipping-and-launch skill",
+      "template": "Use the `shipping-and-launch` skill for this request:\n$ARGUMENTS"
+    },
+    "source-driven-development": {
+      "description": "Use the source-driven-development skill",
+      "template": "Use the `source-driven-development` skill for this request:\n$ARGUMENTS"
+    },
+    "spec-driven-development": {
+      "description": "Use the spec-driven-development skill",
+      "template": "Use the `spec-driven-development` skill for this request:\n$ARGUMENTS"
+    },
+    "test-driven-development": {
+      "description": "Use the test-driven-development skill",
+      "template": "Use the `test-driven-development` skill for this request:\n$ARGUMENTS"
+    },
+    "to-prd": {
+      "description": "Use the to-prd skill",
+      "template": "Use the `to-prd` skill for this request:\n$ARGUMENTS"
+    },
+    "using-agent-skills": {
+      "description": "Use the using-agent-skills skill",
+      "template": "Use the `using-agent-skills` skill for this request:\n$ARGUMENTS"
     }
   },
   "instructions": ["~/.config/opencode/AGENTS.md"],

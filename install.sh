@@ -20,6 +20,7 @@ symlinks=(
   "$DOTFILES_DIR/opencode/opencode.json|$HOME/.config/opencode/opencode.json"
   "$DOTFILES_DIR/opencode/AGENTS.md|$HOME/.config/opencode/AGENTS.md"
   "$DOTFILES_DIR/superconductor/bin/cursor-worktree-layout-bootstrap.sh|$HOME/.superconductor/bin/cursor-worktree-layout-bootstrap.sh"
+  "$DOTFILES_DIR/superconductor/bin/cursor-worktree-post-setup.sh|$HOME/.superconductor/bin/cursor-worktree-post-setup.sh"
 )
 
 force_symlink_with_backup() {
