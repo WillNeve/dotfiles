@@ -25,7 +25,6 @@ Use the format example below as a guide for your review. Ensure the review is co
 Scripts refactoring with improved UX but needs security fix and documentation.
 
 ## Key Changes
-• Removed growthbook-stats (810 lines)
 • Rewrote clean-branches: Bash → TypeScript with @inquirer/prompts
 • Renamed codex-review → review, added opencode support (default)
 • Added shared prompt utility
@@ -53,7 +52,6 @@ scripts/_utils/ts/prompt.ts reinvents @inquirer/prompts. Either use inquirer dir
 
 ## Missing
 
-• Documentation for removed growthbook-stats
 • Tests for branch name sanitization
 • Changelog/migration notes
 
