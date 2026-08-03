@@ -35,7 +35,7 @@
       "model": "openrouter/deepseek/deepseek-v4-flash"
     },
     "fallback_free": {
-      "model": "z-ai/glm-4.5-air:free"
+      "model": "openrouter/z-ai/glm-4.5-air:free"
     }
   },
   "command": {
