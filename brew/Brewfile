@@ -1,0 +1,77 @@
+tap "homebrew/cask-fonts"
+# Run your GitHub Actions locally
+brew "act"
+# OpenAI's coding agent that runs in your terminal
+brew "codex"
+# Load/unload environment variables based on $PWD
+brew "direnv"
+# Open-source, cross-platform JavaScript runtime environment
+brew "node"
+# AST-based pattern checker for JavaScript
+brew "eslint"
+# Play, record, convert, and stream select audio and video codecs
+brew "ffmpeg"
+# GitHub command-line tool
+brew "gh"
+# Quickly rewrite git repository history
+brew "git-filter-repo"
+# Improved top (interactive process viewer)
+brew "htop"
+# Tools and libraries to manipulate images in select formats
+brew "imagemagick"
+# Library to render SVG files using Cairo
+brew "librsvg"
+# Clone of ls with colorful output, file type icons, and more
+brew "lsd"
+# Fast, highly customisable system info script
+brew "neofetch"
+# Manage multiple Node.js versions
+brew "nvm"
+# Development kit for the Java programming language
+brew "openjdk"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.11"
+# Terminal multiplexer
+brew "tmux"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# App to build and share containerised applications and microservices
+cask "docker-desktop"
+# Kext-less implementation of FUSE
+cask "fuse-t"
+# File system integration
+cask "macfuse"
+# Reverse proxy, secure introspectable tunnels to localhost
+cask "ngrok"
+# Disk encryption software focusing on security based on TrueCrypt
+cask "veracrypt-fuse-t"
+vscode "aaron-bond.better-comments"
+vscode "anteprimorac.html-end-tag-labels"
+vscode "anysphere.remote-containers"
+vscode "anysphere.remote-ssh"
+vscode "bierner.markdown-mermaid"
+vscode "bradlc.vscode-tailwindcss"
+vscode "catppuccin.catppuccin-vsc"
+vscode "christian-kohler.npm-intellisense"
+vscode "davidanson.vscode-markdownlint"
+vscode "dbaeumer.vscode-eslint"
+vscode "donjayamanne.githistory"
+vscode "eamodio.gitlens"
+vscode "esbenp.prettier-vscode"
+vscode "github.vscode-github-actions"
+vscode "github.vscode-pull-request-github"
+vscode "mechatroner.rainbow-csv"
+vscode "oxc.oxc-vscode"
+vscode "pkief.material-icon-theme"
+vscode "silofy.hackthebox"
+vscode "tomoki1207.pdf"
+vscode "usernamehw.errorlens"
+vscode "wesbos.theme-cobalt2"
+vscode "yzhang.markdown-all-in-one"
+npm "@anthropic-ai/claude-code"
+npm "corepack"
+npm "diff-so-fancy"
+npm "eslint"
+npm "firebase-tools"
+npm "vercel"
+cask "font-jetbrains-mono-nerd-font"

@@ -1,0 +1,71 @@
+{
+  "extensions.autoUpdate": false,
+  "update.mode": "manual",
+  // [Editor Settings]
+  "editor.bracketPairColorization.enabled": true,
+  "editor.detectIndentation": false,
+  "editor.guides.bracketPairs": true,
+  "editor.minimap.enabled": false,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.renderControlCharacters": true,
+  "editor.rulers": [80, 120],
+  "editor.showFoldingControls": "always",
+  "editor.snippetSuggestions": "top",
+  "editor.tabSize": 2,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "emmet.showSuggestionsAsSnippets": true,
+  "emmet.triggerExpansionOnTab": true,
+  // [File Settings]
+  "explorer.confirmDelete": false,
+  "files.autoSave": "afterDelay",
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "files.exclude": {
+    ".git": true,
+    "**/.git": true,
+    "node_modules": true,
+    "log": true,
+    "tmp": true
+  },
+  "files.watcherExclude": {
+    "**/audits/**": true,
+    "**/coverage/**": true,
+    "**/log/**": true,
+    "**/node_modules/**": true,
+    "**/tmp/**": true,
+    "**/vendor/**": true
+  },
+  // [Window/Workbench (App) Settings]
+  "window.titleBarStyle": "custom",
+  "workbench.editor.enablePreview": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.settings.editor": "json",
+  "workbench.settings.openDefaultSettings": true,
+  "workbench.settings.useSplitJSON": true,
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.panel.defaultLocation": "right",
+  "workbench.sideBar.location": "right",
+  // [Language/Extension Specific Settings]
+  "emmet.includeLanguages": {
+    "erb": "html"
+  },
+  "editor.fontFamily": "JetBrainsMono NF, Consolas, 'Courier New', monospace",
+  "workbench.editor.wrapTabs": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "explorer.confirmPasteNative": false,
+  "editor.fontWeight": "light",
+  "[tailwindcss]": {},
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "cursor.enable_git_worktrees_setting": true,
+  "cursor.agent_layout_browser_beta_setting": true,
+  "editor.largeFileOptimizations": false,
+  // Auto-detect system theme and switch between Catppuccin variants
+  "window.autoDetectColorScheme": true,
+  "workbench.preferredLightColorTheme": "Default Dark+",
+  "workbench.colorTheme": "Catppuccin Macchiato",
+  "workbench.preferredDarkColorTheme": "Cursor Dark Midnight"
+}
