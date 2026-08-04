@@ -10,6 +10,10 @@
       "type": "remote",
       "url": "https://mcp.notion.com/mcp"
     },
+    "spotify": {
+      "type": "local",
+      "command": ["node", "/Users/willneve/code/spotify-mcp-server/build/index.js"]
+    },
     "google-drive": {
       "type": "local",
       "enabled": false,
@@ -31,7 +35,7 @@
       "model": "openrouter/deepseek/deepseek-v4-flash"
     },
     "fallback_free": {
-      "model": "openrouter/z-ai/glm-4.5-air:free"
+      "model": "openrouter/z-ai/glm-4.5-air"
     }
   },
   "command": {
