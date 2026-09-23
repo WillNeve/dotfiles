@@ -9,7 +9,7 @@
 	pager = diff-so-fancy | less --tabs=4 -RF
 	editor = cursor --wait
 [alias]
-  clean-branches = !sh ~/scripts/clean-branches.sh
+  clean-branches = !sh ~/code/dotfiles/scripts/clean-branches/main.sh
   co = checkout
   sweep = !git branch --merged $(git defaultBranch) | grep -E -v " $(git defaultBranch)$" | xargs -r git branch -d && git remote prune origin
 [push]
