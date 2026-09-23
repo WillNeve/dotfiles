@@ -1,8 +1,7 @@
-tap "homebrew/cask-fonts"
 # Run your GitHub Actions locally
 brew "act"
 # OpenAI's coding agent that runs in your terminal
-brew "codex"
+cask "codex"
 # Load/unload environment variables based on $PWD
 brew "direnv"
 # Open-source, cross-platform JavaScript runtime environment
@@ -24,7 +23,7 @@ brew "librsvg"
 # Clone of ls with colorful output, file type icons, and more
 brew "lsd"
 # Fast, highly customisable system info script
-brew "neofetch"
+brew "fastfetch"
 # Manage multiple Node.js versions
 brew "nvm"
 # Development kit for the Java programming language
@@ -47,8 +46,8 @@ cask "ngrok"
 cask "veracrypt-fuse-t"
 vscode "aaron-bond.better-comments"
 vscode "anteprimorac.html-end-tag-labels"
-vscode "anysphere.remote-containers"
-vscode "anysphere.remote-ssh"
+vscode "ms-vscode-remote.remote-containers"
+vscode "ms-vscode-remote.remote-ssh"
 vscode "bierner.markdown-mermaid"
 vscode "bradlc.vscode-tailwindcss"
 vscode "catppuccin.catppuccin-vsc"
@@ -71,7 +70,6 @@ vscode "yzhang.markdown-all-in-one"
 npm "@anthropic-ai/claude-code"
 npm "corepack"
 npm "diff-so-fancy"
-npm "eslint"
 npm "firebase-tools"
 npm "vercel"
 cask "font-jetbrains-mono-nerd-font"
