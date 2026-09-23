@@ -14,8 +14,8 @@ if [ -n "$ROOT_PATH" ] && [ -d "$ROOT_PATH" ]; then
   ROOT_PATH="$(cd "$ROOT_PATH" && pwd -P)"
 fi
 
-if [ -n "$ROOT_PATH" ] && [ -d "$ROOT_PATH" ] && [ -x "$HOME/.superconductor/bin/cursor-worktree-layout-bootstrap.sh" ]; then
-  bash "$HOME/.superconductor/bin/cursor-worktree-layout-bootstrap.sh" "$ROOT_PATH" "$WORKTREE_PATH" >/dev/null 2>&1 &
+if [ -n "$ROOT_PATH" ] && [ -d "$ROOT_PATH" ] && [ -x "$HOME/.super.engineering/bin/cursor-worktree-layout-bootstrap.sh" ]; then
+  bash "$HOME/.super.engineering/bin/cursor-worktree-layout-bootstrap.sh" "$ROOT_PATH" "$WORKTREE_PATH" >/dev/null 2>&1 &
 fi
 
 if [ -z "$ROOT_PATH" ] || [ ! -f "$ROOT_PATH/.env" ]; then

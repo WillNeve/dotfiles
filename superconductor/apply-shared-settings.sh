@@ -2,12 +2,12 @@
 set -euo pipefail
 
 DOTFILES_DIR="${DOTFILES_DIR:-$HOME/code/dotfiles}"
-SC_DIR="$HOME/.superconductor"
+SC_DIR="$HOME/.super.engineering"
 SETTINGS_PATH="$SC_DIR/settings.json"
 SHARED_PATH="$DOTFILES_DIR/superconductor/settings.shared.json"
-POST_SETUP_CMD='bash "$HOME/.superconductor/bin/cursor-worktree-post-setup.sh" "$SUPERCONDUCTOR_ROOT_PATH" "$(pwd -P)"'
-LEGACY_BOOTSTRAP_CMD='bash "$HOME/.superconductor/bin/cursor-worktree-layout-bootstrap.sh" "$SUPERCONDUCTOR_ROOT_PATH" "$(pwd -P)" >/dev/null 2>&1 &'
-LEGACY_BOOTSTRAP_GROUPED_CMD='(bash "$HOME/.superconductor/bin/cursor-worktree-layout-bootstrap.sh" "$SUPERCONDUCTOR_ROOT_PATH" "$(pwd -P)" >/dev/null 2>&1 &)'
+POST_SETUP_CMD='bash "$HOME/.super.engineering/bin/cursor-worktree-post-setup.sh" "$SUPERCONDUCTOR_ROOT_PATH" "$(pwd -P)"'
+LEGACY_BOOTSTRAP_CMD='bash "$HOME/.super.engineering/bin/cursor-worktree-layout-bootstrap.sh" "$SUPERCONDUCTOR_ROOT_PATH" "$(pwd -P)" >/dev/null 2>&1 &'
+LEGACY_BOOTSTRAP_GROUPED_CMD='(bash "$HOME/.super.engineering/bin/cursor-worktree-layout-bootstrap.sh" "$SUPERCONDUCTOR_ROOT_PATH" "$(pwd -P)" >/dev/null 2>&1 &)'
 LEGACY_ENV_CMD='if [ -f "$SUPERCONDUCTOR_ROOT_PATH/.env" ]; then cp "$SUPERCONDUCTOR_ROOT_PATH/.env" "$SUPERCONDUCTOR_ROOT_PATH/.envrc" . && direnv allow; fi'
 LEGACY_ENV_SIMPLE_CMD='cp "$SUPERCONDUCTOR_ROOT_PATH/.env" "$SUPERCONDUCTOR_ROOT_PATH/.envrc" . && direnv allow'
 LEGACY_ENV_PATTERN='^cp "\$SUPERCONDUCTOR_ROOT_PATH/\.env" "\$SUPERCONDUCTOR_ROOT_PATH/\.envrc" \. && direnv allow;?$'
