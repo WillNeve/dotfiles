@@ -29,7 +29,7 @@ if [ -f "$HOME/.aliases" ]; then
   source "$HOME/.aliases"
 fi
 
-export NVM_DIR=/Users/willneve/.nvm
+export NVM_DIR=$HOME/.nvm
 [ -s /opt/homebrew/opt/nvm/nvm.sh ] && \. /opt/homebrew/opt/nvm/nvm.sh  # This loads nvm
 [ -s /opt/homebrew/opt/nvm/etc/bash_completion.d/nvm ] && \. /opt/homebrew/opt/nvm/etc/bash_completion.d/nvm  # This loads nvm bash_completion
 
@@ -44,7 +44,7 @@ fi
 # Java
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 # Opencode
-export PATH=/Users/willneve/.opencode/bin:$PATH
+export PATH=$HOME/.opencode/bin:$PATH
 # Prioritize local node_modules/.bin over global packages
 export PATH="./node_modules/.bin:$PATH"
 
@@ -62,10 +62,10 @@ fi
 alias pip='python3 -m pip'
 
 # Added by Windsurf
-export PATH="/Users/willneve/.codeium/windsurf/bin:$PATH"
+export PATH="$HOME/.codeium/windsurf/bin:$PATH"
 
 # pnpm
-export PNPM_HOME="/Users/willneve/Library/pnpm"
+export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
