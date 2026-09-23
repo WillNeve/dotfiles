@@ -5,7 +5,7 @@
 # Configuration
 SESSION_NAME="Landing Pages"
 WINDOW1_NAME="Main"
-PROJECT_DIR="/Users/willneve/code/work/fyxer/landing-pages"
+PROJECT_DIR="/Users/will/code/work/fyxer/landing-pages"
 
 # Reuse existing session if present
 if tmux has-session -t "$SESSION_NAME" 2>/dev/null; then

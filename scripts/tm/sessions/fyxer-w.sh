@@ -5,7 +5,7 @@
 # Configuration
 SESSION_NAME="Web App"
 WINDOW1_NAME="Main"
-PROJECT_DIR="/Users/willneve/code/work/fyxer/web-app"
+PROJECT_DIR="/Users/will/code/work/fyxer/web-app"
 
 # Reuse existing session if present
 if tmux has-session -t "$SESSION_NAME" 2>/dev/null; then
