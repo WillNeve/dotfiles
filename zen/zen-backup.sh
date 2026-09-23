@@ -9,8 +9,8 @@
 set -e
 
 # Configuration
-PROFILE_DIR="$HOME/Library/Application Support/zen/Profiles/txdl5t74.Default (release)"
-BACKUP_BASE="$HOME/Documents/ZenBackups"
+PROFILE_DIR="$HOME/Library/Application Support/zen/Profiles/r71jffxr.Default (release)"
+BACKUP_BASE="$HOME/.zen-backups"
 LOG_FILE="$BACKUP_BASE/backup.log"
 DAYS_TO_KEEP=7
 

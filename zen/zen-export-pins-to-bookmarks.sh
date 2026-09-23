@@ -10,7 +10,7 @@
 
 set -e
 
-PROFILE_DIR="$HOME/Library/Application Support/zen/Profiles/txdl5t74.Default (release)"
+PROFILE_DIR="$HOME/Library/Application Support/zen/Profiles/r71jffxr.Default (release)"
 DB_PATH="$PROFILE_DIR/places.sqlite"
 
 echo "Exporting pinned tabs to bookmarks..."
@@ -26,7 +26,7 @@ import sqlite3
 import os
 import time
 
-profile_dir = os.path.expanduser("~/Library/Application Support/zen/Profiles/txdl5t74.Default (release)")
+profile_dir = os.path.expanduser("~/Library/Application Support/zen/Profiles/r71jffxr.Default (release)")
 db_path = os.path.join(profile_dir, "places.sqlite")
 
 conn = sqlite3.connect(db_path)
