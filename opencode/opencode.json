@@ -12,7 +12,8 @@
     },
     "spotify": {
       "type": "local",
-      "command": ["node", "/Users/willneve/code/spotify-mcp-server/build/index.js"]
+      "enabled": false,
+      "command": ["node", "$HOME/code/spotify-mcp-server/build/index.js"]
     },
     "google-drive": {
       "type": "local",
