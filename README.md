@@ -48,7 +48,7 @@ launchctl load ~/Library/LaunchAgents/com.willneve.zen-backup.plist
 | `htop/` | htop process viewer config |
 | `neofetch/` | neofetch system info config |
 | `opencode/` | OpenCode AI agent config, AGENTS.md, and skills |
-| `p10k/` | Powerlevel10k dark/light themes with auto-detection |
+| `p10k/` | Powerlevel10k config (ANSI colors only, follows the terminal theme) |
 | `scripts/` | Utility scripts (git submodule) |
 | `superconductor/` | Cursor worktree management |
 | `tmux/` | Tmux config |

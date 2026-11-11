@@ -21,6 +21,9 @@ plugins=(
   node
 )
 
+# Silence ssh-agent plugin output so it doesn't break p10k instant prompt
+zstyle :omz:plugins:ssh-agent quiet yes
+
 # Load Oh My Zsh
 source $ZSH/oh-my-zsh.sh
 
@@ -33,10 +36,9 @@ export NVM_DIR=$HOME/.nvm
 [ -s /opt/homebrew/opt/nvm/nvm.sh ] && \. /opt/homebrew/opt/nvm/nvm.sh  # This loads nvm
 [ -s /opt/homebrew/opt/nvm/etc/bash_completion.d/nvm ] && \. /opt/homebrew/opt/nvm/etc/bash_completion.d/nvm  # This loads nvm bash_completion
 
-# To customize prompt, run `p10k configure` or edit the p10k configs.
-# Theme-aware p10k configuration (auto-detects dark/light mode)
-if [[ -f "$HOME/code/dotfiles/p10k/theme-detect.zsh" ]]; then
-  source "$HOME/code/dotfiles/p10k/theme-detect.zsh"
+# To customize prompt, edit p10k/.p10k.zsh. It only uses ANSI colors, so it follows the terminal theme.
+if [[ -f "$HOME/code/dotfiles/p10k/.p10k.zsh" ]]; then
+  source "$HOME/code/dotfiles/p10k/.p10k.zsh"
 elif [[ -f ~/.p10k.zsh ]]; then
   source ~/.p10k.zsh
 fi
