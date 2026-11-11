@@ -1,8 +1,8 @@
 # Ghostty Terminal Configuration
-# Using Catppuccin Macchiato theme with useful plugins and modern settings
+# Using Analog Heartbeat (dark) / Ayu Light (light)
 
 # Theme Configuration - auto-switches with system dark/light mode
-theme = light:Catppuccin Latte,dark:Catppuccin Macchiato
+theme = light:Ayu Light,dark:Analog Heartbeat
 
 # Font Configuration
 font-family = JetBrainsMono NF Light
@@ -51,7 +51,6 @@ quick-terminal-screen = main
 quick-terminal-autohide = true
 
 # Key Bindings
-keybind = global:cmd+grave_accent=toggle_quick_terminal
 keybind = global:cmd+shift+enter=toggle_fullscreen
 keybind = cmd+plus=increase_font_size:1
 keybind = cmd+minus=decrease_font_size:1
