@@ -14,11 +14,13 @@
   "editor.tabSize": 2,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
+  // *.css is associated with the tailwindcss language below, which Prettier
+  // doesn't register for by language id; register it by file pattern instead.
+  "prettier.documentSelectors": ["**/*.css"],
   "emmet.showSuggestionsAsSnippets": true,
   "emmet.triggerExpansionOnTab": true,
   // [File Settings]
   "explorer.confirmDelete": false,
-  "files.autoSave": "afterDelay",
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
@@ -27,7 +29,7 @@
     "**/.git": true,
     "node_modules": true,
     "log": true,
-    "tmp": true
+    "tmp": true,
   },
   "files.watcherExclude": {
     "**/audits/**": true,
@@ -35,7 +37,7 @@
     "**/log/**": true,
     "**/node_modules/**": true,
     "**/tmp/**": true,
-    "**/vendor/**": true
+    "**/vendor/**": true,
   },
   // [Window/Workbench (App) Settings]
   "window.titleBarStyle": "custom",
@@ -49,7 +51,7 @@
   "workbench.sideBar.location": "right",
   // [Language/Extension Specific Settings]
   "emmet.includeLanguages": {
-    "erb": "html"
+    "erb": "html",
   },
   "editor.fontFamily": "JetBrainsMono NF, Consolas, 'Courier New', monospace",
   "workbench.editor.wrapTabs": true,
@@ -58,14 +60,15 @@
   "editor.fontWeight": "light",
   "[tailwindcss]": {},
   "files.associations": {
-    "*.css": "tailwindcss"
+    "*.css": "tailwindcss",
   },
   "cursor.enable_git_worktrees_setting": true,
   "cursor.agent_layout_browser_beta_setting": true,
   "editor.largeFileOptimizations": false,
   // Auto-detect system theme and switch between Catppuccin variants
   "window.autoDetectColorScheme": true,
-  "workbench.preferredLightColorTheme": "Default Dark+",
-  "workbench.colorTheme": "Catppuccin Macchiato",
-  "workbench.preferredDarkColorTheme": "Cursor Dark Midnight"
+  "workbench.colorTheme": "Cursor Dark High Contrast",
+  "workbench.preferredDarkColorTheme": "Cursor Dark Midnight",
+  "cursor.composer.conversationDensity": "compact-ungrouped",
+  "workbench.preferredLightColorTheme": "Quiet Light",
 }
