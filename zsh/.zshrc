@@ -75,3 +75,6 @@ esac
 # pnpm end
 export DIRENV_LOG_FORMAT=""
 eval "$(direnv hook zsh)"
+
+# Homebrew Python: unversioned python/pip
+export PATH="/opt/homebrew/opt/python@3.15/libexec/bin:$PATH"
