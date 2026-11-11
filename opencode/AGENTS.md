@@ -6,6 +6,12 @@ This file provides guidance to AI coding agents (Claude Code, Cursor, Copilot, A
 
 A collection of skills for Claude.ai and Claude Code for senior software engineers. Skills are packaged instructions and scripts that extend Claude and your coding agents capabilities.
 
+## Git Commits
+
+- Write commit messages as Conventional Commits: `type(scope): summary` (e.g. `fix(zen): update profile id and backup paths`)
+- Split unrelated changes into separate commits, one logical change each
+- Never add `Co-Authored-By` trailers or any "Generated with Claude Code" / AI attribution to commit messages or PR descriptions
+
 ## OpenCode Integration
 
 OpenCode uses a **skill-driven execution model** powered by the `skill` tool and globally installed skills.
