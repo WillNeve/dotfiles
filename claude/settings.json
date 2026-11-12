@@ -1,8 +1,12 @@
 {
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
+  "model": "sonnet",
   "permissions": {
     "defaultMode": "auto"
   },
-  "model": "claude-fable-5-2",
   "enabledPlugins": {
     "frontend-design@claude-plugins-official": true,
     "swift-lsp@claude-plugins-official": true,
@@ -11,11 +15,10 @@
   "modelSettings": {
     "claude-opus-5-5": {
       "effortLevel": "high"
+    },
+    "claude-sonnet-5-5": {
+      "effortLevel": "medium"
     }
-  },
-  "attribution": {
-    "commit": "",
-    "pr": ""
   },
   "theme": "auto"
 }
