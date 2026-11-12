@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 
 DOTFILES_DIR="$HOME/code/dotfiles"
-OPENCODE_SKILLS_SOURCE="$DOTFILES_DIR/opencode/skills"
-OPENCODE_SKILLS_CANONICAL="$HOME/.agents/skills"
+SKILLS_SOURCE="$DOTFILES_DIR/skills"
+SKILLS_CANONICAL="$HOME/.agents/skills"
 OPENCODE_SKILLS_COMPAT="$HOME/.config/opencode/skills"
+CLAUDE_DIR="$HOME/.claude"
+CLAUDE_SKILLS_DIR="$CLAUDE_DIR/skills"
 
 symlinks=(
   "$DOTFILES_DIR/zsh/.zshrc|$HOME/.zshrc"
@@ -64,12 +66,28 @@ for entry in "${symlinks[@]}"; do
   echo "✓ Linked: $target -> $source"
 done
 
-if [ -d "$OPENCODE_SKILLS_SOURCE" ]; then
-  echo "Linking OpenCode skills via ~/.agents/skills..."
-  force_symlink_with_backup "$OPENCODE_SKILLS_SOURCE" "$OPENCODE_SKILLS_CANONICAL"
-  force_symlink_with_backup "$OPENCODE_SKILLS_CANONICAL" "$OPENCODE_SKILLS_COMPAT"
+if [ -d "$SKILLS_SOURCE" ]; then
+  echo "Linking skills via ~/.agents/skills..."
+  force_symlink_with_backup "$SKILLS_SOURCE" "$SKILLS_CANONICAL"
+  force_symlink_with_backup "$SKILLS_CANONICAL" "$OPENCODE_SKILLS_COMPAT"
+
+  # ~/.claude/skills also holds Claude-managed dirs (e.g. synced/), so link each skill individually
+  echo "Linking skills into ~/.claude/skills..."
+  mkdir -p "$CLAUDE_SKILLS_DIR"
+  for skill_dir in "$SKILLS_SOURCE"/*/; do
+    skill_dir="${skill_dir%/}"
+    force_symlink_with_backup "$skill_dir" "$CLAUDE_SKILLS_DIR/$(basename "$skill_dir")"
+  done
+
+  # Prune links to skills that have since been removed from dotfiles
+  for link in "$CLAUDE_SKILLS_DIR"/*; do
+    if [ -L "$link" ] && [ ! -e "$link" ] && [[ "$(readlink "$link")" == "$SKILLS_SOURCE"/* ]]; then
+      rm "$link"
+      echo "✗ Removed stale skill link: $link"
+    fi
+  done
 else
-  echo "Warning: OpenCode skills source not found at $OPENCODE_SKILLS_SOURCE"
+  echo "Warning: skills source not found at $SKILLS_SOURCE"
 fi
 
 if [ -x "$DOTFILES_DIR/superconductor/apply-shared-settings.sh" ]; then

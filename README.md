@@ -47,9 +47,10 @@ launchctl load ~/Library/LaunchAgents/com.willneve.zen-backup.plist
 | `github/` | GitHub CLI (gh) config |
 | `htop/` | htop process viewer config |
 | `neofetch/` | neofetch system info config |
-| `opencode/` | OpenCode AI agent config, AGENTS.md, and skills |
+| `opencode/` | OpenCode AI agent config and AGENTS.md |
 | `p10k/` | Powerlevel10k config (ANSI colors only, follows the terminal theme) |
 | `scripts/` | Utility scripts (git submodule) |
+| `skills/` | Agent skills shared by Claude Code and OpenCode (linked into `~/.claude/skills` and `~/.agents/skills`) |
 | `superconductor/` | Cursor worktree management |
 | `tmux/` | Tmux config |
 | `zen/` | Zen Browser backup scripts and launchd agent |

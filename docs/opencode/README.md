@@ -12,7 +12,7 @@ This doc describes how OpenCode is configured in this dotfiles repo and how glob
 
 - Global OpenCode config: `opencode/opencode.json`
 - Global agent instructions: `opencode/AGENTS.md`
-- Canonical global skills: `opencode/skills/`
+- Canonical global skills: `skills/` (shared with Claude Code)
 - Installer wiring: `install.sh`
 
 ## Install-Time Wiring
@@ -21,7 +21,7 @@ This doc describes how OpenCode is configured in this dotfiles repo and how glob
 
 - `~/.config/opencode/opencode.json` -> `~/code/dotfiles/opencode/opencode.json`
 - `~/.config/opencode/AGENTS.md` -> `~/code/dotfiles/opencode/AGENTS.md`
-- `~/.agents/skills` -> `~/code/dotfiles/opencode/skills`
+- `~/.agents/skills` -> `~/code/dotfiles/skills`
 - `~/.config/opencode/skills` -> `~/.agents/skills`
 
 This makes `~/.agents/skills` the canonical runtime location, with `~/.config/opencode/skills` as compatibility alias.
@@ -40,7 +40,7 @@ Result: dotfiles defines baseline behavior, while each repository can override o
 
 ### Global skills
 
-Global skills live in `opencode/skills/` and are installed to `~/.agents/skills` via symlink.
+Global skills live in `skills/` and are installed to `~/.agents/skills` via symlink. Each skill is also linked into `~/.claude/skills/` for Claude Code.
 
 ### Repo-local skills
 
