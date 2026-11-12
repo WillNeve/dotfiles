@@ -41,6 +41,7 @@ launchctl load ~/Library/LaunchAgents/com.willneve.zen-backup.plist
 | Directory | What it tracks |
 |-----------|---------------|
 | `brew/` | Homebrew Brewfile (formula, casks, VSCode extensions, npm globals) |
+| `claude/` | Claude Code global `settings.json` and `CLAUDE.md` |
 | `cursor/` | Cursor editor settings and keybindings |
 | `ghostty/` | Ghostty terminal emulator config |
 | `git/` | Git config and global gitignore |

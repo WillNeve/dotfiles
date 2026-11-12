@@ -90,6 +90,10 @@ else
   echo "Warning: skills source not found at $SKILLS_SOURCE"
 fi
 
+echo "Linking Claude Code config..."
+force_symlink_with_backup "$DOTFILES_DIR/claude/settings.json" "$CLAUDE_DIR/settings.json"
+force_symlink_with_backup "$DOTFILES_DIR/claude/CLAUDE.md" "$CLAUDE_DIR/CLAUDE.md"
+
 if [ -x "$DOTFILES_DIR/superconductor/apply-shared-settings.sh" ]; then
   echo "Applying shared Superconductor settings..."
   DOTFILES_DIR="$DOTFILES_DIR" "$DOTFILES_DIR/superconductor/apply-shared-settings.sh"
