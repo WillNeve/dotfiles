@@ -1,5 +1,7 @@
 # Run your GitHub Actions locally
 brew "act"
+# Incredibly fast JavaScript runtime (required by gstack)
+brew "oven-sh/bun/bun"
 # OpenAI's coding agent that runs in your terminal
 cask "codex"
 # Load/unload environment variables based on $PWD

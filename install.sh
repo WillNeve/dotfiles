@@ -6,6 +6,7 @@ SKILLS_CANONICAL="$HOME/.agents/skills"
 OPENCODE_SKILLS_COMPAT="$HOME/.config/opencode/skills"
 CLAUDE_DIR="$HOME/.claude"
 CLAUDE_SKILLS_DIR="$CLAUDE_DIR/skills"
+GSTACK_DIR="$CLAUDE_SKILLS_DIR/gstack"
 
 symlinks=(
   "$DOTFILES_DIR/zsh/.zshrc|$HOME/.zshrc"
@@ -93,6 +94,19 @@ fi
 echo "Linking Claude Code config..."
 force_symlink_with_backup "$DOTFILES_DIR/claude/settings.json" "$CLAUDE_DIR/settings.json"
 force_symlink_with_backup "$DOTFILES_DIR/claude/CLAUDE.md" "$CLAUDE_DIR/CLAUDE.md"
+
+# gstack is a git clone whose setup generates its own skill dirs, so it is bootstrapped rather than tracked
+if [ ! -d "$GSTACK_DIR" ]; then
+  if command -v bun >/dev/null 2>&1; then
+    echo "Installing gstack..."
+    git clone --single-branch --depth 1 https://github.com/garrytan/gstack.git "$GSTACK_DIR" \
+      && (cd "$GSTACK_DIR" && ./setup)
+  else
+    echo "Warning: bun is required to install gstack (brew install oven-sh/bun/bun), then re-run install.sh"
+  fi
+else
+  echo "✓ gstack already installed at $GSTACK_DIR"
+fi
 
 if [ -x "$DOTFILES_DIR/superconductor/apply-shared-settings.sh" ]; then
   echo "Applying shared Superconductor settings..."

@@ -26,3 +26,6 @@ Thumbs.db
 # Backup files
 *.bak
 *.backup
+
+# gstack setup backups
+claude/settings.json.bak*
