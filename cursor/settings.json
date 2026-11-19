@@ -54,6 +54,12 @@
     "erb": "html",
   },
   "editor.fontFamily": "JetBrainsMono NF, Consolas, 'Courier New', monospace",
+  "[markdown]": {
+    "editor.fontFamily": "Georgia",
+    "editor.fontSize": 17,
+    "editor.fontWeight": "normal",
+    "editor.lineHeight": 1.55,
+  },
   "workbench.editor.wrapTabs": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "explorer.confirmPasteNative": false,
